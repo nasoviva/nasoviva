@@ -1,7 +1,7 @@
 
 
 
-### Hi there 👋 My name is Victoria. 
+### Hi 👋 I'm Victoria. 
 
 🌱 I'm a student of the School21 programming school (Ecole Branch 42). 
 
