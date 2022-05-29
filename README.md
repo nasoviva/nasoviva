@@ -5,7 +5,7 @@
 
 🌱 I'm a student of the School21 programming school (Ecole Branch 42). 
 
-🔭 Now I learn Java language and dream of trying my hand at a real project under the guidance of a mentor.
+🔭 I learn Java language and dream of trying my hand at a real project under the guidance of a mentor.
 
 <p align="center"> 
 <div align="center">
