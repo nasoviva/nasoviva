@@ -10,4 +10,4 @@ My name is Victoria.
 🔭 I dream of trying my hand at a real project under the guidance of a mentor.
 
 
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nasoviva&layout=compact)](https://github.com/nasoviva/github-readme-stats" />
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nasoviva&layout=compact)](https://github.com/nasoviva/github-readme-stats)
