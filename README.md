@@ -1,9 +1,9 @@
 
 
 ### Hi there 👋
-My name is Victoria. I'm a student of the School21 programming school (Ecole Branch 42). 
+My name is Victoria. 
 
-🌱 Now I'm learning Java language at course by EPAM.
+🌱 I'm a student of the School21 programming school (Ecole Branch 42). 
 
 🔭 I dream of trying my hand at a real project under the guidance of a mentor.
 
