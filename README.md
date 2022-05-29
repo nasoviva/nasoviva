@@ -10,4 +10,4 @@
 <p align="center"> 
 <div align="center">
     
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nasoviva&layout=4)](https://github.com/nasoviva/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nasoviva&layout&hide=Objective-c)](https://github.com/nasoviva/github-readme-stats)
