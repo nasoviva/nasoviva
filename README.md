@@ -3,9 +3,9 @@
 
 ### Hi 👋 I'm Victoria. 
 
-🌱 I'm a student of the School21 programming school (Ecole Branch 42). 
+🌱 Student of the School21 programming school (Ecole Branch 42). 
 
-🔭 I learn Java language and dream of trying my hand at a real project under the guidance of a mentor.
+🔭 Learn Java language with Epam and MJC School.
 
 <p align="center"> 
 <div align="center">
