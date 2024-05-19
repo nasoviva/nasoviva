@@ -1,11 +1,11 @@
 
 
 
-### Hi 👋 I'm Victoria. 
+### Hi 👋 I'm Victoria 
 
-🌱 Student of the School21 programming school (Ecole Branch 42). 
 
-🔭 Learn Java language with Epam and MJC School.
+
+🔭 Learn Swift language with Udemy 🌱
 
 <p align="center"> 
 <div align="center">
