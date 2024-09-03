@@ -1,8 +1,6 @@
 
 
 
-### Hi 👋 I'm Victoria 
-
 
 <p align="center"> 
 <div align="center">
