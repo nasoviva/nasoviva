@@ -4,9 +4,6 @@
 ### Hi 👋 I'm Victoria 
 
 
-
-🔭 Learn Swift language with Udemy 🌱
-
 <p align="center"> 
 <div align="center">
     
