@@ -18,7 +18,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-                  <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 hover:bg-secondary/80 hover:text-secondary-foreground font-normal">
+                  <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
             {t("hero.location")}
           </Badge>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Footer() {
             asChild
             variant="ghost"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
           >
             <a
               href="https://linkedin.com/in/nasoviva"
@@ -68,7 +68,7 @@ export default function Footer() {
             asChild
             variant="ghost"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
           >
             <a
               href="https://github.com/nasoviva"
@@ -85,7 +85,7 @@ export default function Footer() {
             asChild
             variant="ghost"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
           >
             <a
               href="https://t.me/hverda_ar"
@@ -102,7 +102,7 @@ export default function Footer() {
             asChild
             variant="ghost"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
           >
             <a
               href="mailto:nasoviva@gmail.com"
