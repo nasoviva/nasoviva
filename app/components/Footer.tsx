@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useLanguage } from "@/app/contexts/LanguageContext"
-import { Github, Linkedin, Send } from "lucide-react"
+import { Github, Linkedin, Send, Mail } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import { Badge } from "@/app/components/ui/badge"
 
@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer id="footer" className="relative w-full bg-muted/30 border-t border-border">
+    <footer id="footer" className="relative w-full bg-amber-200/80 dark:bg-slate-800/80 backdrop-blur-md border-t border-amber-300 dark:border-slate-700">
       <div className="max-w-1200px mx-auto px-8 py-16 text-center">
         <motion.div
           className="mb-8"
@@ -95,6 +95,21 @@ export default function Footer() {
             >
               <Send className="h-5 w-5" />
               Telegram
+            </a>
+          </Button>
+          
+          <Button
+            asChild
+            variant="ghost"
+            size="lg"
+                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground text-sm md:text-base font-normal"
+          >
+            <a
+              href="mailto:nasoviva@gmail.com"
+              className="flex items-center gap-3"
+            >
+              <Mail className="h-5 w-5" />
+              Email
             </a>
           </Button>
         </motion.div>

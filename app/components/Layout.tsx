@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Content */}
       <div className="relative z-10">
         <MainHeader />
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10 pt-20">{children}</main>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ export default function MainHeader() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-muted/30 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-amber-200/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-amber-300 dark:border-slate-700">
       <div className="max-w-1200px mx-auto px-8 py-4">
         <div className="flex items-center relative">
           {/* Navigation Menu - Centered */}
@@ -73,12 +73,12 @@ export default function MainHeader() {
 
             {/* Theme Toggle */}
             <Button 
-              variant="outline" 
+              variant="ghost" 
               size="icon" 
               onClick={toggleTheme} 
-              className="theme-toggle"
+              className="theme-toggle bg-transparent text-muted-foreground hover:text-foreground border border-border rounded-lg"
             >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
           </div>
         </div>
