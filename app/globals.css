@@ -8,7 +8,7 @@
     --background: 330 100% 98%;
     --foreground: 0 0% 0%;
 
-    --card: 0 0% 100%;
+    --card: 45 93% 85%;
     --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
@@ -17,13 +17,13 @@
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 100%;
+    --secondary: 45 93% 85%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 100%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 100%;
+    --accent: 45 93% 70%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
@@ -41,7 +41,7 @@
     --background: 220 15% 8%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 0%;
+    --card: 220 70% 25%;
     --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 0%;
@@ -50,13 +50,13 @@
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 10%;
+    --secondary: 220 70% 25%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 20%;
+    --accent: 220 70% 20%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
@@ -190,9 +190,7 @@
 }
 
   
-  .landing-page .tech-logo:hover,
   .landing-page .skill-item:hover,
-  .landing-page [class*="tech"]:hover,
   .landing-page [class*="skill"]:hover {
     background: hsl(var(--accent));
     color: hsl(var(--accent-foreground));
