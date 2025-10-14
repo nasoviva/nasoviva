@@ -82,6 +82,7 @@
     min-height: 100vh;
     color: hsl(var(--foreground));
     background-color: hsl(var(--background));
+    overflow-x: hidden;
   }
   
   /* Ensure sections are visible with proper specificity */
