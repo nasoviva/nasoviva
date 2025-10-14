@@ -59,9 +59,9 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
           {logos.map((logo, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
                 {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
                 <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
                   {logo.name}
@@ -74,9 +74,9 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
           {logos.map((logo, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
                 {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
                 <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
                   {logo.name}

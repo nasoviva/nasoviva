@@ -140,7 +140,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
             {projects.map((project) => (
               <button
                 key={project.id}
-                className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap cursor-pointer text-sm sm:text-base ${
+                        className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-normal transition-all duration-300 whitespace-nowrap cursor-pointer text-sm sm:text-base ${
                   activeProject === project.id
                     ? "bg-primary text-primary-foreground"
                     : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
@@ -198,7 +198,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     href="https://atlasanalytics.co/"
                     target="_blank"
                     rel="noopener noreferrer"
-                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-medium-thin"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
                     {language === 'ru' ? 'Посмотреть сайт' : 
                      language === 'es' ? 'Ver sitio web' : 
@@ -209,7 +209,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     href="https://www.joinsignals.io/"
                     target="_blank"
                     rel="noopener noreferrer"
-                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-medium-thin"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
                     {language === 'ru' ? 'Посмотреть сайт' : 
                      language === 'es' ? 'Ver sitio web' : 
@@ -221,7 +221,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       href="https://github.com/nasoviva/Christmas-shop"
                       target="_blank"
                       rel="noopener noreferrer"
-                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-medium-thin"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
                       {language === 'ru' ? 'Открыть код' : 
                        language === 'es' ? 'Ver código' : 
@@ -231,7 +231,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       href="https://nasoviva.github.io/Christmas-shop/christmas-shop/pages/home/index.html"
                       target="_blank"
                       rel="noopener noreferrer"
-                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-medium-thin"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
                       {language === 'ru' ? 'Посмотреть сайт' : 
                        language === 'es' ? 'Ver sitio web' : 
@@ -241,7 +241,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                 ) : (
                   <a
                     href="#"
-                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-medium-thin"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
                     {language === 'ru' ? 'Подробнее' : 
                      language === 'es' ? 'Más Detalles' : 

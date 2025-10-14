@@ -26,7 +26,7 @@ export default function MainHeader() {
               <a
                 key={item.key}
                 href={item.href}
-                className="text-sm md:text-base lg:text-lg font-medium-thin text-foreground hover:text-foreground transition-colors"
+                className="text-sm md:text-base lg:text-lg font-normal text-foreground hover:text-foreground transition-colors"
               >
                 {t(`nav.${item.key}`)}
               </a>
@@ -39,7 +39,7 @@ export default function MainHeader() {
             <Button
               asChild
               variant="default"
-              className="contact-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 font-medium-thin"
+              className="contact-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 font-normal"
             >
               <a
                 href="#footer"
@@ -55,15 +55,15 @@ export default function MainHeader() {
             </Button>
 
             {/* Language Selector */}
-            <div className="flex gap-1 bg-primary/10 dark:bg-transparent rounded-lg border border-primary/20 dark:border-primary h-10 items-center">
+            <div className="flex gap-1 bg-transparent rounded-lg border border-border h-10 items-center">
               {(["en", "es", "ru"] as const).map((lang) => (
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
-                  className={`px-2 md:px-3 h-10 rounded text-xs md:text-sm font-medium transition-colors flex items-center justify-center ${
+                  className={`px-2 md:px-3 h-10 rounded text-xs md:text-sm font-normal transition-colors flex items-center justify-center ${
                     language === lang
                       ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "bg-transparent text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {lang.toUpperCase()}

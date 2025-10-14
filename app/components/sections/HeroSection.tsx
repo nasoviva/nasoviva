@@ -47,7 +47,7 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
         distance={20}
         delay={0.4}
       >
-        <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 hover:bg-secondary/80 hover:text-secondary-foreground font-medium-thin">
+                <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 hover:bg-secondary/80 hover:text-secondary-foreground font-normal">
           {t("hero.badge")}
         </Badge>
       </AnimatedElement>
@@ -82,7 +82,7 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
           <Button
             asChild
             variant="default"
-            className="download-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground px-6 min-w-32 font-medium-thin"
+                    className="download-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground px-6 min-w-32 font-normal"
           >
             <a
               href={cvFile}
