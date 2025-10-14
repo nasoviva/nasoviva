@@ -130,7 +130,7 @@ export default function SkillsSection({ isActive }: SkillsSectionProps) {
 
 
   return (
-    <section id="skills" className="relative w-full flex flex-col justify-center items-center text-center p-8 md:p-16 lg:p-24">
+    <section id="skills" className="relative w-full flex flex-col justify-center items-center text-center p-8 md:p-16 lg:p-24 overflow-x-hidden">
       <AnimatedElement
         direction="up"
         distance={60}

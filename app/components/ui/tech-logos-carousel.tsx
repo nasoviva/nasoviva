@@ -31,17 +31,13 @@ interface TechLogosCarouselProps {
 }
 
 export default function TechLogosCarousel({ logos, className = "" }: TechLogosCarouselProps) {
-  const logoCount = logos.length
-  const logoWidth = 200 // Width of each logo container
-  const totalWidth = logoCount * 2 * logoWidth // Double for seamless loop
-
   return (
-    <div className={`relative z-10 max-w-6xl mx-auto ${className}`}>
+    <div className={`relative z-10 w-full max-w-6xl mx-auto px-4 ${className}`}>
       <div className="relative overflow-hidden">
         <motion.div
-          className="flex gap-12 items-center"
+          className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center"
           animate={{
-            x: [0, -logoCount * logoWidth], // Move by the width of one set of logos
+            x: [0, "-50%"], // Move by 50% to show the duplicate set
           }}
           transition={{
             x: {
@@ -51,19 +47,16 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
               ease: "linear",
             },
           }}
-          style={{
-            width: `${totalWidth}px`,
-          }}
         >
           {/* First set of logos */}
           {logos.map((logo, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70"
+              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center opacity-70"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
-                {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
-                <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-background/50 backdrop-blur-sm">
+                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary" />}
+                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight text-foreground">
                   {logo.name}
                 </span>
               </div>
@@ -74,11 +67,11 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
           {logos.map((logo, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70"
+              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center opacity-70"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
-                {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
-                <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-background/50 backdrop-blur-sm">
+                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary" />}
+                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight text-foreground">
                   {logo.name}
                 </span>
               </div>
