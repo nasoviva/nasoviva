@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useLanguage } from "@/app/contexts/LanguageContext"
 import TechLogosCarousel from "../ui/tech-logos-carousel"
+import AnimatedElement from "@/app/components/ui/animated-element"
 import { 
   FileText, 
   Code, 
@@ -24,7 +25,7 @@ interface SkillsSectionProps {
 }
 
 export default function SkillsSection({ isActive }: SkillsSectionProps) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   // Tech logos with CSS classes and icons
   const techLogos = [
@@ -129,34 +130,143 @@ export default function SkillsSection({ isActive }: SkillsSectionProps) {
 
 
   return (
-    <section className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
-      <motion.h2
-        className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-bold leading-[1.1] tracking-tight"
-        initial={{ opacity: 0, y: 50 }}
-        animate={isActive ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+    <section id="skills" className="relative w-full flex flex-col justify-center items-center text-center p-8 md:p-16 lg:p-24">
+      <AnimatedElement
+        direction="up"
+        distance={60}
+        delay={0.2}
       >
-        {t("skills.title")}
-      </motion.h2>
+        <h2 className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-thin-heading leading-[1.1] tracking-tight">
+          {t("skills.title")}
+        </h2>
+      </AnimatedElement>
 
-      <motion.p
-        className="text-lg md:text-xl lg:text-2xl max-w-6xl mt-6 text-foreground pr-16 md:pr-24"
-        initial={{ opacity: 0, y: 50 }}
-        animate={isActive ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.2 }}
+      <AnimatedElement
+        direction="up"
+        distance={40}
+        delay={0.4}
       >
-        {t("skills.description")}
-      </motion.p>
+        <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mt-6 text-foreground mx-auto text-center font-thin-heading">
+          {t("skills.description")}
+        </p>
+      </AnimatedElement>
 
       {/* Tech logos carousel */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isActive ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.4 }}
+      <AnimatedElement
+        direction="up"
+        distance={50}
+        delay={0.6}
         className="mt-8"
       >
         <TechLogosCarousel logos={techLogos} />
-      </motion.div>
+      </AnimatedElement>
+
+      {/* Skills List */}
+      <AnimatedElement
+        direction="up"
+        distance={40}
+        delay={0.8}
+        className="mt-12 max-w-4xl mx-auto"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+          {/* Frontend Development */}
+          <div className="bg-secondary/80 rounded-lg p-6">
+            <h3 className="text-lg font-medium-thin mb-4 text-primary">
+              {language === 'ru' ? 'Frontend Разработка' : 
+               language === 'es' ? 'Desarrollo Frontend' : 
+               'Frontend Development'}
+            </h3>
+            <ul className="space-y-2 text-sm font-thin-heading">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                React & Next.js
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                JavaScript & TypeScript
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                HTML5 & CSS3
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                TailwindCSS & Styled Components
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Responsive Design
+              </li>
+            </ul>
+          </div>
+
+          {/* Tools & Technologies */}
+          <div className="bg-secondary/80 rounded-lg p-6">
+            <h3 className="text-lg font-medium-thin mb-4 text-primary">
+              {language === 'ru' ? 'Инструменты и Технологии' : 
+               language === 'es' ? 'Herramientas y Tecnologías' : 
+               'Tools & Technologies'}
+            </h3>
+            <ul className="space-y-2 text-sm font-thin-heading">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Git & GitHub
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Vite & Webpack
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                ESLint & Prettier
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Vitest & Testing Library
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Husky & Lint-staged
+              </li>
+            </ul>
+          </div>
+
+          {/* Low-Code */}
+          <div className="bg-secondary/80 rounded-lg p-6">
+            <h3 className="text-lg font-medium-thin mb-4 text-primary">
+              {language === 'ru' ? 'Low-Code' : 
+               language === 'es' ? 'Low-Code' : 
+               'Low-Code'}
+            </h3>
+            <ul className="space-y-2 text-sm font-thin-heading">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Xano
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Airtable
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Make
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                UIBakery
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Tilda
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Carrd
+              </li>
+            </ul>
+          </div>
+        </div>
+      </AnimatedElement>
 
     </section>
   )
