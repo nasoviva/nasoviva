@@ -60,7 +60,7 @@ export default function MainHeader() {
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
-                  className={`px-2 md:px-3 h-10 rounded text-xs md:text-sm font-normal transition-colors flex items-center justify-center ${
+                  className={`px-2 md:px-3 h-10 rounded-lg text-xs md:text-sm font-normal transition-colors flex items-center justify-center ${
                     language === lang
                       ? "bg-primary text-primary-foreground hover:bg-primary/90"
                       : "bg-transparent text-muted-foreground hover:text-foreground"
