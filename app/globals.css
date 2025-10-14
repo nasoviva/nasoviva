@@ -29,7 +29,7 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
+    --border: 0 0% 0%;
     --input: 0 0% 90%;
     --ring: 0 0% 0%;
 
@@ -62,7 +62,7 @@
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
+    --border: 0 0% 100%;
     --input: 0 0% 20%;
     --ring: 0 0% 100%;
   }
@@ -135,7 +135,6 @@
   .landing-page [class*="skill"] {
     background: hsl(var(--secondary));
     color: hsl(var(--secondary-foreground));
-    border: 1px solid hsl(var(--border));
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
     transition: all 0.2s ease-in-out;
   }
