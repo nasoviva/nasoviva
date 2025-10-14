@@ -27,7 +27,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
       </motion.h2>
       {content && (
         <motion.p
-          className="text-lg md:text-xl lg:text-2xl max-w-5xl mt-6 text-neutral-400"
+          className="text-lg md:text-xl lg:text-2xl max-w-5xl mt-6 text-muted-foreground"
           initial={{ opacity: 0, y: 50 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -45,7 +45,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           <Button
             variant="outline"
             size="lg"
-            className="text-white bg-transparent border-white hover:bg-white hover:text-black transition-colors"
+            className="text-foreground bg-transparent border-foreground hover:bg-foreground hover:text-background transition-colors"
           >
             {buttonText}
           </Button>

@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import { 
   FileText, 
   Code, 
@@ -30,54 +31,60 @@ interface TechLogosCarouselProps {
 }
 
 export default function TechLogosCarousel({ logos, className = "" }: TechLogosCarouselProps) {
-  // Use all logos for seamless infinite scroll
-  const allLogos = [...logos]
-  
-  // Duplicate logos multiple times for seamless infinite scroll
-  const duplicatedLogos = [...allLogos, ...allLogos, ...allLogos, ...allLogos]
+  const logoCount = logos.length
+  const logoWidth = 200 // Width of each logo container
+  const totalWidth = logoCount * 2 * logoWidth // Double for seamless loop
 
   return (
-    <div className={`relative z-10 max-w-6xl ${className}`}>
-      <div className="w-full">
-        <div className="w-full pr-16 md:pr-24">
-          {/* First row - moving left */}
-          <div className="overflow-hidden py-2 relative">
-            <div className="flex animate-scroll-infinite gap-6 md:gap-12 whitespace-nowrap" style={{ width: 'max-content' }}>
-              {duplicatedLogos.map((logo, index) => (
-                <div
-                  key={`${logo.id}-${index}`}
-                  className="flex items-center gap-2 md:gap-4 text-muted-foreground hover:text-foreground transition-all duration-300 group flex-shrink-0"
-                >
-                  <div className="tech-logo relative w-28 h-20 md:w-40 md:h-24 flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2">
-                    {logo.icon && <logo.icon className="h-5 w-5" />}
-                    <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight">
-                      {logo.name}
-                    </span>
-                  </div>
-                </div>
-              ))}
+    <div className={`relative z-10 max-w-6xl mx-auto ${className}`}>
+      <div className="relative overflow-hidden">
+        <motion.div
+          className="flex gap-12 items-center"
+          animate={{
+            x: [0, -logoCount * logoWidth], // Move by the width of one set of logos
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20, // Slower than the original for better readability
+              ease: "linear",
+            },
+          }}
+          style={{
+            width: `${totalWidth}px`,
+          }}
+        >
+          {/* First set of logos */}
+          {logos.map((logo, index) => (
+            <div
+              key={`first-${index}`}
+              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+            >
+              <div className="tech-logo relative w-full h-full flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
+                {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
+                <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
+                  {logo.name}
+                </span>
+              </div>
             </div>
-          </div>
-          
-          {/* Second row - moving right */}
-          <div className="overflow-hidden py-2 relative">
-            <div className="flex animate-scroll-infinite-reverse gap-6 md:gap-12 whitespace-nowrap" style={{ width: 'max-content' }}>
-              {duplicatedLogos.map((logo, index) => (
-                <div
-                  key={`${logo.id}-reverse-${index}`}
-                  className="flex items-center gap-2 md:gap-4 text-muted-foreground hover:text-foreground transition-all duration-300 group flex-shrink-0"
-                >
-                  <div className="tech-logo relative w-28 h-20 md:w-40 md:h-24 flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2">
-                    {logo.icon && <logo.icon className="h-5 w-5" />}
-                    <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight">
-                      {logo.name}
-                    </span>
-                  </div>
-                </div>
-              ))}
+          ))}
+
+          {/* Duplicate set for seamless loop */}
+          {logos.map((logo, index) => (
+            <div
+              key={`second-${index}`}
+              className="flex-shrink-0 w-48 h-24 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+            >
+              <div className="tech-logo relative w-full h-full flex-shrink-0 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 border border-border/50 overflow-hidden flex flex-col items-center justify-center gap-2 bg-background/50 backdrop-blur-sm">
+                {logo.icon && <logo.icon className="h-6 w-6 text-primary" />}
+                <span className="text-xs md:text-sm font-medium text-center px-2 leading-tight text-foreground">
+                  {logo.name}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   )

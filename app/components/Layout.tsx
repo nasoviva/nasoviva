@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import Header from "./Header"
+import MainHeader from "./MainHeader"
 
 interface LayoutProps {
   children: ReactNode
@@ -9,17 +9,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="h-screen overflow-hidden relative">
-      {/* Background container */}
-      <div className="background-container"></div>
-      
-      {/* Background overlay for better text readability */}
-      <div className="background-overlay"></div>
-      
+    <div className="min-h-screen relative landing-page">
       {/* Content */}
-      <div className="relative z-10 h-full">
-        <Header />
-        <div className="relative z-20 h-full">{children}</div>
+      <div className="relative z-10">
+        <MainHeader />
+        <main className="relative z-10">{children}</main>
       </div>
     </div>
   )

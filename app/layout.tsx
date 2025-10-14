@@ -3,12 +3,17 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import { Providers } from "./providers"
 
-const inter = Inter({ subsets: ["latin", "cyrillic"] })
+const inter = Inter({ 
+  subsets: ["latin", "cyrillic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+})
 
 export const metadata = {
-  title: "Solo Builders Community",
-  description: "Accelerator platform for solo builders working on side projects",
-    generator: 'v0.app'
+  title: "Victoria Nasonova - Frontend Developer",
+  description: "Frontend Developer creating beautiful and functional user experiences. Specialized in React, Next.js, TypeScript, and modern web technologies.",
+  keywords: "frontend developer, react, next.js, typescript, web development, ui/ux, portfolio",
+  author: "Victoria Nasonova",
+  generator: 'Next.js'
 }
 
 export default function RootLayout({
@@ -20,35 +25,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>{children}</Providers>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Apply dark theme background when dark class is present
-              function updateBackground() {
-                const backgroundContainer = document.querySelector('.background-container');
-                if (backgroundContainer) {
-                  const isDark = document.documentElement.classList.contains('dark');
-                  backgroundContainer.style.backgroundImage = isDark ? "url('/black.jpeg')" : "url('/light.jpeg')";
-                  console.log('Background updated:', isDark ? 'dark' : 'light');
-                }
-              }
-              
-              // Wait for DOM to be ready
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', updateBackground);
-              } else {
-                updateBackground();
-              }
-              
-              // Watch for theme changes
-              const observer = new MutationObserver(updateBackground);
-              observer.observe(document.documentElement, {
-                attributes: true,
-                attributeFilter: ['class']
-              });
-            `,
-          }}
-        />
       </body>
     </html>
   )
