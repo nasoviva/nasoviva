@@ -52,11 +52,11 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
           {logos.map((logo, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center opacity-70"
+              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-background/50 backdrop-blur-sm">
-                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary" />}
-                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight text-foreground">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-secondary text-secondary-foreground" style={{ pointerEvents: 'none' }}>
+                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />}
+                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight">
                   {logo.name}
                 </span>
               </div>
@@ -67,11 +67,11 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
           {logos.map((logo, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center opacity-70"
+              className="flex-shrink-0 w-32 sm:w-40 md:w-44 lg:w-48 h-16 sm:h-20 md:h-22 lg:h-24 flex items-center justify-center"
             >
-              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-background/50 backdrop-blur-sm">
-                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary" />}
-                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight text-foreground">
+              <div className="tech-logo relative w-full h-full flex-shrink-0 rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-2 bg-secondary text-secondary-foreground" style={{ pointerEvents: 'none' }}>
+                {logo.icon && <logo.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />}
+                <span className="text-xs sm:text-sm font-medium text-center px-1 sm:px-2 leading-tight">
                   {logo.name}
                 </span>
               </div>

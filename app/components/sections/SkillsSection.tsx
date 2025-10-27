@@ -141,15 +141,6 @@ export default function SkillsSection({ isActive }: SkillsSectionProps) {
         </h2>
       </AnimatedElement>
 
-      <AnimatedElement
-        direction="up"
-        distance={40}
-        delay={0.4}
-      >
-        <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mt-6 text-foreground mx-auto text-center font-thin-heading">
-          {t("skills.description")}
-        </p>
-      </AnimatedElement>
 
       {/* Tech logos carousel */}
       <AnimatedElement
@@ -165,103 +156,118 @@ export default function SkillsSection({ isActive }: SkillsSectionProps) {
       <AnimatedElement
         direction="up"
         distance={40}
-        delay={0.8}
-        className="mt-12 max-w-4xl mx-auto"
+        delay={0.6}
+        className="mt-12 max-w-5xl mx-auto"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           {/* Frontend Development */}
-          <div className="bg-secondary/80 rounded-lg p-6">
-            <h3 className="text-lg font-medium-thin mb-4 text-primary">
-              {language === 'ru' ? 'Frontend Разработка' : 
-               language === 'es' ? 'Desarrollo Frontend' : 
-               'Frontend Development'}
+          <div className="bg-secondary rounded-lg p-6 h-full flex flex-col">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">
+              {t("skills.frontend")}
             </h3>
-            <ul className="space-y-2 text-sm font-thin-heading">
+            <ul className="space-y-2 text-sm font-thin-heading text-secondary-foreground">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 React & Next.js
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 JavaScript & TypeScript
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 HTML5 & CSS3
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 TailwindCSS & Styled Components
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Responsive Design
               </li>
             </ul>
           </div>
 
           {/* Tools & Technologies */}
-          <div className="bg-secondary/80 rounded-lg p-6">
-            <h3 className="text-lg font-medium-thin mb-4 text-primary">
-              {language === 'ru' ? 'Инструменты и Технологии' : 
-               language === 'es' ? 'Herramientas y Tecnologías' : 
-               'Tools & Technologies'}
+          <div className="bg-secondary rounded-lg p-6 h-full flex flex-col">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">
+              {t("skills.tools")}
             </h3>
-            <ul className="space-y-2 text-sm font-thin-heading">
+            <ul className="space-y-2 text-sm font-thin-heading text-secondary-foreground">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Git & GitHub
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Vite & Webpack
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 ESLint & Prettier
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Vitest & Testing Library
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Husky & Lint-staged
               </li>
             </ul>
           </div>
 
           {/* Low-Code */}
-          <div className="bg-secondary/80 rounded-lg p-6">
-            <h3 className="text-lg font-medium-thin mb-4 text-primary">
-              {language === 'ru' ? 'Low-Code' : 
-               language === 'es' ? 'Low-Code' : 
-               'Low-Code'}
+          <div className="bg-secondary rounded-lg p-6 h-full flex flex-col">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">
+              {t("skills.testing")}
             </h3>
-            <ul className="space-y-2 text-sm font-thin-heading">
+            <ul className="space-y-2 text-sm font-thin-heading text-secondary-foreground">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Xano
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Airtable
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Make
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 UIBakery
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Tilda
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
                 Carrd
+              </li>
+            </ul>
+          </div>
+
+          {/* Design & Collaboration */}
+          <div className="bg-secondary rounded-lg p-6 h-full flex flex-col">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">
+              {t("skills.other")}
+            </h3>
+            <ul className="space-y-2 text-sm font-thin-heading text-secondary-foreground">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
+                Figma
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
+                Design Systems
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-secondary-foreground rounded-full"></span>
+                Responsive Layouts
               </li>
             </ul>
           </div>

@@ -47,7 +47,7 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
         distance={20}
         delay={0.4}
       >
-                <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 hover:bg-secondary/80 hover:text-secondary-foreground font-normal">
+                <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
           {t("hero.badge")}
         </Badge>
       </AnimatedElement>
@@ -73,16 +73,26 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
       </AnimatedElement>
 
       <AnimatedElement
-        className="mt-8"
         direction="up"
         distance={30}
         delay={1.0}
+      >
+        <p className="text-base md:text-lg lg:text-xl max-w-3xl mt-4 text-muted-foreground mx-auto text-center font-thin-heading">
+          {t("hero.description")}
+        </p>
+      </AnimatedElement>
+
+      <AnimatedElement
+        className="mt-8"
+        direction="up"
+        distance={30}
+        delay={1.2}
       >
         <div className="flex justify-center">
           <Button
             asChild
             variant="default"
-                    className="download-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground px-6 min-w-32 font-normal"
+                    className="download-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-transform duration-200 px-6 min-w-32 font-normal"
           >
             <a
               href={cvFile}

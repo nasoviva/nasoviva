@@ -17,7 +17,7 @@ export default function MainHeader() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-amber-200/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-amber-300 dark:border-slate-700">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black backdrop-blur-md border-b border-gray-200 dark:border-transparent">
       <div className="max-w-1200px mx-auto px-8 py-4">
         <div className="flex items-center relative">
           {/* Navigation Menu - Centered */}
@@ -39,7 +39,7 @@ export default function MainHeader() {
             <Button
               asChild
               variant="default"
-              className="contact-button h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 min-w-32 font-normal"
+              className="contact-button h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 transition-transform duration-200 px-6 min-w-32 font-normal"
             >
               <a
                 href="#footer"

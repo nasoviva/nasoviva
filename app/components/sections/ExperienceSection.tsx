@@ -47,6 +47,22 @@ export default function ExperienceSection({ isActive }: ExperienceSectionProps) 
           </li>
         </ul>
       </AnimatedElement>
+
+      <AnimatedElement
+        direction="up"
+        distance={30}
+        delay={0.8}
+        className="mt-12 max-w-4xl mx-auto"
+      >
+        <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+          {t("experience.footer").split('\n').map((line, index) => (
+            <span key={index}>
+              {index > 0 && <br />}
+              {line}
+            </span>
+          ))}
+        </p>
+      </AnimatedElement>
     </section>
   )
 }

@@ -34,52 +34,72 @@ export default function AboutSection({ isActive }: AboutSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Internal Applications Card */}
           <motion.div
-            className="bg-secondary/80 text-secondary-foreground rounded-xl p-6 text-left hover:bg-accent hover:text-accent-foreground transition-all duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-xl hover:scale-105 active:transform active:translate-y-0 active:scale-100"
+            className="bg-secondary text-secondary-foreground rounded-xl p-6 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.3,
+              scale: { duration: 0.2, ease: "easeInOut" }
+            }}
           >
-            <h3 className="text-lg font-medium-thin mb-4">{t("about.card1.title")}</h3>
-            <p className="text-sm leading-relaxed opacity-80 font-thin-heading">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">{t("about.card1.title")}</h3>
+            <p className="text-sm leading-relaxed text-secondary-foreground font-thin-heading">
               {t("about.item1")}
             </p>
           </motion.div>
 
           {/* Partner Websites Card */}
           <motion.div
-            className="bg-secondary/80 text-secondary-foreground rounded-xl p-6 text-left hover:bg-accent hover:text-accent-foreground transition-all duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-xl hover:scale-105 active:transform active:translate-y-0 active:scale-100"
+            className="bg-secondary text-secondary-foreground rounded-xl p-6 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.4,
+              scale: { duration: 0.2, ease: "easeInOut" }
+            }}
           >
-            <h3 className="text-lg font-medium-thin mb-4">{t("about.card2.title")}</h3>
-            <p className="text-sm leading-relaxed opacity-80 font-thin-heading">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">{t("about.card2.title")}</h3>
+            <p className="text-sm leading-relaxed text-secondary-foreground font-thin-heading">
               {t("about.item2")}
             </p>
           </motion.div>
 
           {/* API Integration Card */}
           <motion.div
-            className="bg-secondary/80 text-secondary-foreground rounded-xl p-6 text-left hover:bg-accent hover:text-accent-foreground transition-all duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-xl hover:scale-105 active:transform active:translate-y-0 active:scale-100"
+            className="bg-secondary text-secondary-foreground rounded-xl p-6 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.5,
+              scale: { duration: 0.2, ease: "easeInOut" }
+            }}
           >
-            <h3 className="text-lg font-medium-thin mb-4">{t("about.card3.title")}</h3>
-            <p className="text-sm leading-relaxed opacity-80 font-thin-heading">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">{t("about.card3.title")}</h3>
+            <p className="text-sm leading-relaxed text-secondary-foreground font-thin-heading">
               {t("about.item3")}
             </p>
           </motion.div>
 
           {/* Workflow Automation Card */}
           <motion.div
-            className="bg-secondary/80 text-secondary-foreground rounded-xl p-6 text-left hover:bg-accent hover:text-accent-foreground transition-all duration-200 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-xl hover:scale-105 active:transform active:translate-y-0 active:scale-100"
+            className="bg-secondary text-secondary-foreground rounded-xl p-6 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: 0.6,
+              scale: { duration: 0.2, ease: "easeInOut" }
+            }}
           >
-            <h3 className="text-lg font-medium-thin mb-4">{t("about.card4.title")}</h3>
-            <p className="text-sm leading-relaxed opacity-80 font-thin-heading">
+            <h3 className="text-lg font-medium-thin mb-4 text-secondary-foreground">{t("about.card4.title")}</h3>
+            <p className="text-sm leading-relaxed text-secondary-foreground font-thin-heading">
               {t("about.item4")}
             </p>
           </motion.div>
