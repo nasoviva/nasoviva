@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer id="footer" className="relative w-full bg-amber-200/80 dark:bg-slate-800/80 backdrop-blur-md border-t border-amber-300 dark:border-slate-700">
+    <footer id="footer" className="relative w-full bg-white dark:bg-black backdrop-blur-md border-t border-gray-200 dark:border-transparent">
       <div className="max-w-1200px mx-auto px-8 py-16 text-center">
         <motion.div
           className="mb-8"
@@ -18,7 +18,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-                  <Badge className="bg-secondary/80 text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
+                  <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
             {t("hero.location")}
           </Badge>
         </motion.div>
@@ -49,9 +49,9 @@ export default function Footer() {
         >
           <Button
             asChild
-            variant="ghost"
+            variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="https://linkedin.com/in/nasoviva"
@@ -66,9 +66,9 @@ export default function Footer() {
           
           <Button
             asChild
-            variant="ghost"
+            variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="https://github.com/nasoviva"
@@ -83,12 +83,12 @@ export default function Footer() {
           
           <Button
             asChild
-            variant="ghost"
+            variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
-              href="https://t.me/hverda_ar"
+              href="https://t.me/hverda"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
@@ -100,9 +100,9 @@ export default function Footer() {
           
           <Button
             asChild
-            variant="ghost"
+            variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 bg-secondary/80 text-secondary-foreground hover:bg-accent hover:text-accent-foreground text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="mailto:nasoviva@gmail.com"

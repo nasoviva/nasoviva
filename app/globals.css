@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    /* Light theme: soft pink background, black text */
-    --background: 330 100% 98%;
+    /* Light theme: white background, black text */
+    --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
     --card: 45 93% 85%;
@@ -17,14 +17,14 @@
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 93% 85%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 100%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 45 93% 70%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -50,8 +50,8 @@
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 220 70% 25%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 65%;
@@ -113,20 +113,34 @@
     color: hsl(var(--foreground));
   }
   
+  .landing-page .bg-secondary h3,
+  .landing-page .bg-secondary p,
+  .landing-page .bg-secondary span,
+  .landing-page .bg-secondary ul,
+  .landing-page .bg-secondary li {
+    color: hsl(var(--secondary-foreground));
+  }
+  
   main p,
   .landing-page p {
     color: hsl(var(--foreground));
   }
   
   /* Theme toggle and interactive elements with proper specificity */
-  .landing-page .theme-toggle {
-    background: transparent !important;
+  .landing-page button.theme-toggle {
+    background: transparent;
     color: hsl(var(--muted-foreground));
-    box-shadow: none !important;
+    box-shadow: none;
     transition: all 0.2s ease-in-out;
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-    min-width: 2.5rem !important;
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+  }
+  
+  .landing-page button.theme-toggle:hover {
+    background: transparent;
+    color: hsl(var(--foreground));
+    box-shadow: none;
   }
   
   .landing-page .tech-logo,
@@ -139,22 +153,13 @@
     transition: all 0.2s ease-in-out;
   }
   
-  .landing-page .theme-toggle:hover {
-    background: transparent !important;
-    color: hsl(var(--foreground));
-    box-shadow: none !important;
-  }
-  
   .landing-page .contact-button {
     transition: all 0.2s ease-in-out;
     transform-origin: center center;
   }
   
   .landing-page .contact-button:hover {
-    background: hsl(var(--primary) / 0.8);
-    color: hsl(var(--primary-foreground));
-    transform: scale(1.02);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
   }
   
   .landing-page .download-button {
@@ -163,19 +168,16 @@
   }
   
   .landing-page .download-button:hover {
-    background: hsl(var(--primary) / 0.8);
-    color: hsl(var(--primary-foreground));
-    transform: scale(1.02);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
   }
   
   .landing-page .footer-link {
-    transition: all 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     transform-origin: center center;
   }
   
 .landing-page .footer-link:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .landing-page .project-button {
@@ -184,21 +186,9 @@
 }
 
 .landing-page .project-button:hover {
-  background: hsl(var(--primary) / 0.8);
-  color: hsl(var(--primary-foreground));
-  transform: scale(1.02);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
 }
 
-  
-  .landing-page .skill-item:hover,
-  .landing-page [class*="skill"]:hover {
-    background: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-  
   .landing-page .theme-toggle:active {
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.06);
   }
@@ -209,6 +199,15 @@
   .landing-page [class*="skill"]:active {
     transform: translateY(0);
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Scale Skills cards on hover */
+  .landing-page .bg-secondary.rounded-lg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .landing-page .bg-secondary.rounded-lg:hover:not(.tech-logo) {
+    transform: scale(1.05);
   }
   
 }
@@ -269,16 +268,12 @@
 
 /* Custom background gradients */
 html.dark body {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/dark-background.svg') center/cover no-repeat fixed;
+  background: #000000;
   min-height: 100vh;
 }
 
 html:not(.dark) body {
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-    url('/yellow-background.svg') center/cover no-repeat fixed;
+  background: #ffffff;
   min-height: 100vh;
 }
 
@@ -302,10 +297,7 @@ html:not(.dark) body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 150, 255, 0.3) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(200, 220, 255, 0.25) 0%, transparent 60%),
-    radial-gradient(circle at 40% 40%, rgba(180, 200, 255, 0.2) 0%, transparent 60%);
+  background: rgba(0, 0, 0, 0.02);
   z-index: -2;
   animation: parallaxFloat 20s ease-in-out infinite;
 }
@@ -317,9 +309,32 @@ html:not(.dark) body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 60% 70%, rgba(150, 180, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 30% 30%, rgba(220, 240, 255, 0.2) 0%, transparent 50%);
+  background: rgba(0, 0, 0, 0.01);
+  z-index: -1;
+  animation: parallaxFloat 25s ease-in-out infinite reverse;
+}
+
+/* Parallax background layers for dark theme */
+html.dark body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  z-index: -2;
+  animation: parallaxFloat 20s ease-in-out infinite;
+}
+
+html.dark body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
   z-index: -1;
   animation: parallaxFloat 25s ease-in-out infinite reverse;
 }
