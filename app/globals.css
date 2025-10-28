@@ -268,13 +268,67 @@
 
 /* Custom background gradients */
 html.dark body {
-  background: #000000;
+  background: url('/dark.jpg') center center / cover no-repeat #000000;
+  background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+}
+
+html.dark body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  pointer-events: none;
+}
+
+html.dark body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: -2;
+  animation: parallaxFloat 20s ease-in-out infinite;
+  pointer-events: none;
 }
 
 html:not(.dark) body {
-  background: #ffffff;
+  background: url('/light.jpg') center center / cover no-repeat #ffffff;
+  background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+}
+
+html:not(.dark) body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  pointer-events: none;
+}
+
+html:not(.dark) body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
+  z-index: -2;
+  animation: parallaxFloat 20s ease-in-out infinite;
+  pointer-events: none;
 }
 
 /* Thin font for headings */
@@ -289,55 +343,6 @@ html:not(.dark) body {
   letter-spacing: -0.01em;
 }
 
-/* Parallax background layers */
-html:not(.dark) body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.02);
-  z-index: -2;
-  animation: parallaxFloat 20s ease-in-out infinite;
-}
-
-html:not(.dark) body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.01);
-  z-index: -1;
-  animation: parallaxFloat 25s ease-in-out infinite reverse;
-}
-
-/* Parallax background layers for dark theme */
-html.dark body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  z-index: -2;
-  animation: parallaxFloat 20s ease-in-out infinite;
-}
-
-html.dark body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.02);
-  z-index: -1;
-  animation: parallaxFloat 25s ease-in-out infinite reverse;
-}
 
 @keyframes parallaxFloat {
   0%, 100% {

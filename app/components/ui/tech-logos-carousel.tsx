@@ -1,22 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { 
-  FileText, 
-  Code, 
-  Globe, 
-  Atom, 
-  Palette, 
-  Wind, 
-  Layers, 
-  Zap, 
-  GitBranch, 
-  Figma, 
-  Shield, 
-  Sparkles, 
-  TestTube,
-  TestTube2
-} from "lucide-react"
+import { useEffect, useRef } from "react"
 
 interface TechLogo {
   id: string
@@ -31,22 +15,44 @@ interface TechLogosCarouselProps {
 }
 
 export default function TechLogosCarousel({ logos, className = "" }: TechLogosCarouselProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    let animationId: number
+    let startTime: number | null = null
+    const duration = 25000 // 25 seconds
+    const totalWidth = container.scrollWidth / 2 // Half because we have duplicate content
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      const elapsed = currentTime - startTime
+      const progress = (elapsed % duration) / duration
+      
+      const translateX = -progress * totalWidth
+      container.style.transform = `translateX(${translateX}px)`
+      
+      animationId = requestAnimationFrame(animate)
+    }
+
+    animationId = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
+    }
+  }, [])
+
   return (
     <div className={`relative z-10 w-full max-w-6xl mx-auto px-4 ${className}`}>
       <div className="relative overflow-hidden">
-        <motion.div
+        <div
+          ref={containerRef}
           className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center"
-          animate={{
-            x: [0, "-50%"], // Move by 50% to show the duplicate set
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 20, // Slower than the original for better readability
-              ease: "linear",
-            },
-          }}
+          style={{ width: 'max-content' }}
         >
           {/* First set of logos */}
           {logos.map((logo, index) => (
@@ -77,7 +83,7 @@ export default function TechLogosCarousel({ logos, className = "" }: TechLogosCa
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   )
