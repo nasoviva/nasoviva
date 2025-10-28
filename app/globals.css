@@ -293,6 +293,7 @@ html.dark body {
 @media (max-width: 768px) {
   html.dark body {
     background-attachment: scroll;
+    background: #000000;
   }
 }
 
@@ -331,6 +332,7 @@ html:not(.dark) body {
 @media (max-width: 768px) {
   html:not(.dark) body {
     background-attachment: scroll;
+    background: #ffffff;
   }
 }
 
