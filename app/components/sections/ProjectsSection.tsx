@@ -95,17 +95,6 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
 
   return (
     <section id="projects" className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        {/* Dots pattern */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px)",
-            backgroundSize: "12px 12px",
-          }}
-        />
-      </div>
-
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-8 text-foreground">
           {/* Section Title and Description */}
