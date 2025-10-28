@@ -17,7 +17,7 @@ export default function MainHeader() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black backdrop-blur-md border-b border-gray-200 dark:border-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-black/50 backdrop-blur-md border-b border-gray-200 dark:border-transparent">
       <div className="max-w-1200px mx-auto px-8 py-4">
         <div className="flex items-center relative">
           {/* Navigation Menu - Centered */}
