@@ -143,7 +143,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                         className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-normal transition-all duration-300 whitespace-nowrap cursor-pointer text-sm sm:text-base ${
                   activeProject === project.id
                     ? "bg-primary text-primary-foreground hover:scale-105"
-                    : "border border-border bg-transparent text-foreground hover:scale-105"
+                    : "border border-primary bg-transparent text-primary hover:scale-105"
                 }`}
                 onClick={() => setActiveProject(project.id)}
               >

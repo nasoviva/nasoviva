@@ -4,67 +4,67 @@
 
 @layer base {
   :root {
-    /* Light theme: white background, black text */
+    /* Light theme: white background, darker blue text */
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 220 100% 35%;
 
     --card: 45 93% 85%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 220 100% 35%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 220 100% 35%;
 
-    --primary: 0 0% 0%;
+    --primary: 220 100% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 0%;
+    --secondary: 220 100% 35%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 100%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 220 100% 30%;
 
-    --accent: 0 0% 20%;
+    --accent: 220 100% 25%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 0%;
+    --border: 220 100% 35%;
     --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --ring: 220 100% 35%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark theme: dark gradient background like Ice.io, white text */
+    /* Dark theme: dark gradient background like Ice.io, light yellow text */
     --background: 220 15% 8%;
-    --foreground: 0 0% 100%;
+    --foreground: 60 100% 85%;
 
     --card: 220 70% 25%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: 60 100% 85%;
 
     --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 60 100% 85%;
 
-    --primary: 0 0% 100%;
+    --primary: 60 100% 85%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 100%;
+    --secondary: 60 100% 85%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 60 100% 70%;
 
     --accent: 220 70% 20%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 60 100% 85%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 100%;
+    --border: 60 100% 85%;
     --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --ring: 60 100% 85%;
   }
 }
 
@@ -185,9 +185,25 @@
   transform-origin: center center;
 }
 
-.landing-page .project-button:hover {
-  transform: scale(1.05);
-}
+  .landing-page .project-button:hover {
+    transform: scale(1.05);
+  }
+
+  /* Fix project selection buttons border flickering */
+  .landing-page button[class*="border-primary"] {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .landing-page button[class*="bg-primary"] {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary));
+    border-width: 1px;
+    border-style: solid;
+  }
 
   .landing-page .theme-toggle:active {
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.06);

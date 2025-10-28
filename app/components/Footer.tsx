@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer id="footer" className="relative w-full bg-white dark:bg-black backdrop-blur-md border-t border-gray-200 dark:border-transparent">
+    <footer id="footer" className="relative w-full bg-white/50 dark:bg-black/50 backdrop-blur-md border-t border-gray-200 dark:border-transparent">
       <div className="max-w-1200px mx-auto px-8 py-16 text-center">
         <motion.div
           className="mb-8"
