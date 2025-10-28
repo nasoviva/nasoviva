@@ -290,6 +290,12 @@ html.dark body {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  html.dark body {
+    background-attachment: scroll;
+  }
+}
+
 html.dark body::after {
   content: '';
   position: fixed;
@@ -320,6 +326,12 @@ html:not(.dark) body {
   background-attachment: fixed;
   min-height: 100vh;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  html:not(.dark) body {
+    background-attachment: scroll;
+  }
 }
 
 html:not(.dark) body::after {
