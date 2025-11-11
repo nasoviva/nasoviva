@@ -28,6 +28,14 @@ const projects = [
     image: "/ui-implementation.png",
     technologies: ["JavaScript", "HTML", "CSS", "Figma", "Git"],
     category: "UI/UX"
+  },
+  {
+    id: "movie-picker",
+    name: "Movie-Picker",
+    description: "Interactive questionnaire that leads users to movie recommendations",
+    image: "/movie-picker.png",
+    technologies: ["JavaScript", "HTML", "CSS", "Git"],
+    category: "Web Development"
   }
 ]
 
@@ -64,6 +72,15 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
             : language === 'es'
             ? "Implementación de diseños de Figma con precisión pixel-perfect. Creación de interfaces limpias, consistentes y amigables con diseño responsivo. Parte frontend de un proyecto educativo."
             : "Pixel-perfect Figma design implementation. Creating clean, consistent, and user-friendly interfaces with responsive design principles. Frontend part of an educational project.",
+          features: []
+        }
+      case "movie-picker":
+        return {
+          description: language === 'ru'
+            ? "Интерактивный опросник, который помогает пользователям выбрать фильм на основе их предпочтений. Проект включает простую, интерактивную анкету, которая ведет пользователя к результату на основе их выборов. Стилизация выполнена с использованием CSS, обеспечивая чистый и адаптивный макет. JavaScript используется для обработки взаимодействий пользователя и динамического обновления контента."
+            : language === 'es'
+            ? "Cuestionario interactivo que ayuda a los usuarios a elegir una película basada en sus preferencias. El proyecto incluye un cuestionario simple e interactivo que lleva al usuario a un resultado basado en sus elecciones. El estilo se realiza usando CSS, asegurando un diseño limpio y responsivo. JavaScript se usa para manejar las interacciones del usuario y las actualizaciones dinámicas de contenido."
+            : "Interactive questionnaire that helps users pick a movie based on their preferences. The project includes a simple, interactive questionnaire that leads the user to a result based on their choices. The styling is done using CSS, ensuring a clean and responsive layout. JavaScript is used for handling user interactions and dynamic content updates.",
           features: []
         }
       default:
@@ -227,6 +244,29 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                        'View Website'}
                     </a>
                   </>
+                ) : activeProject === "movie-picker" ? (
+                  <>
+                    <a
+                      href="https://github.com/nasoviva/movie-picker"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
+                    >
+                      {language === 'ru' ? 'Открыть код' : 
+                       language === 'es' ? 'Ver código' : 
+                       'View Code'}
+                    </a>
+                    <a
+                      href="https://nasoviva.github.io/movie-picker/movie-picker/pages/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
+                    >
+                      {language === 'ru' ? 'Посмотреть сайт' : 
+                       language === 'es' ? 'Ver sitio web' : 
+                       'View Website'}
+                    </a>
+                  </>
                 ) : (
                   <a
                     href="#"
@@ -279,6 +319,19 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     <img
                       src="/cristmas_shop.png"
                       alt="Christmas Shop Preview"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+                    />
+                  </a>
+                ) : activeProject === "movie-picker" ? (
+                  <a
+                    href="https://nasoviva.github.io/movie-picker/movie-picker/pages/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-64 rounded-lg shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-200"
+                  >
+                    <img
+                      src="/movie-picker.png"
+                      alt="Movie-Picker Preview"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
