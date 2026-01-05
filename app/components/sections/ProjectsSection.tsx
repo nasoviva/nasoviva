@@ -6,6 +6,14 @@ import AnimatedElement from "@/app/components/ui/animated-element"
 
 const projects = [
   {
+    id: "to-done",
+    name: "To-Done",
+    description: "Task management application with Kanban boards and timeline views",
+    image: "/toDone.png",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web Development"
+  },
+  {
     id: "atlas",
     name: "Company Website",
     description: "Corporate website development and maintenance",
@@ -81,6 +89,15 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
             : language === 'es'
             ? "Cuestionario interactivo que ayuda a los usuarios a elegir una película basada en sus preferencias. El proyecto incluye un cuestionario simple e interactivo que lleva al usuario a un resultado basado en sus elecciones. El estilo se realiza usando CSS, asegurando un diseño limpio y responsivo. JavaScript se usa para manejar las interacciones del usuario y las actualizaciones dinámicas de contenido."
             : "Interactive questionnaire that helps users pick a movie based on their preferences. The project includes a simple, interactive questionnaire that leads the user to a result based on their choices. The styling is done using CSS, ensuring a clean and responsive layout. JavaScript is used for handling user interactions and dynamic content updates.",
+          features: []
+        }
+      case "to-done":
+        return {
+          description: language === 'ru'
+            ? "Приложение для управления задачами To-Done помогает пользователям эффективно организовывать свою работу. Проект включает визуализацию задач в виде Канбан-досок с функцией перетаскивания, временные шкалы для планирования и отслеживания дедлайнов, а также интуитивный интерфейс для управления продуктивностью. Разработано с использованием современных технологий React и Next.js для обеспечения высокой производительности и отзывчивости."
+            : language === 'es'
+            ? "La aplicación de gestión de tareas To-Done ayuda a los usuarios a organizar su trabajo de manera eficiente. El proyecto incluye visualización de tareas en tableros Kanban con funcionalidad de arrastrar y soltar, líneas de tiempo para planificación y seguimiento de plazos, así como una interfaz intuitiva para gestionar la productividad. Desarrollado con tecnologías modernas React y Next.js para garantizar alto rendimiento y capacidad de respuesta."
+            : "Task management application To-Done helps users efficiently organize their work. The project includes task visualization in Kanban boards with drag-and-drop functionality, timelines for planning and deadline tracking, as well as an intuitive interface for managing productivity. Built with modern React and Next.js technologies to ensure high performance and responsiveness.",
           features: []
         }
       default:
@@ -267,6 +284,29 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                        'View Website'}
                     </a>
                   </>
+                ) : activeProject === "to-done" ? (
+                  <>
+                    <a
+                      href="https://github.com/nasoviva/Task-Management-Application"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
+                    >
+                      {language === 'ru' ? 'Открыть код' : 
+                       language === 'es' ? 'Ver código' : 
+                       'View Code'}
+                    </a>
+                    <a
+                      href="https://to-done-nasoviva.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                            className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
+                    >
+                      {language === 'ru' ? 'Посмотреть сайт' : 
+                       language === 'es' ? 'Ver sitio web' : 
+                       'View Website'}
+                    </a>
+                  </>
                 ) : (
                   <a
                     href="#"
@@ -332,6 +372,19 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     <img
                       src="/movie-picker.png"
                       alt="Movie-Picker Preview"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+                    />
+                  </a>
+                ) : activeProject === "to-done" ? (
+                  <a
+                    href="https://to-done-nasoviva.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-64 rounded-lg shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-200"
+                  >
+                    <img
+                      src="/toDone.png"
+                      alt="To-Done Task Management Application Preview"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
