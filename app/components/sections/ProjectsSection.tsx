@@ -7,49 +7,34 @@ import AnimatedElement from "@/app/components/ui/animated-element"
 const projects = [
   {
     id: "to-done",
-    name: "To-Done",
-    description: "Task management application with Kanban boards and timeline views",
     image: "/toDone.png",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    category: "Web Development"
   },
   {
     id: "atlas",
-    name: "Company Website",
-    description: "Corporate website development and maintenance",
     image: "/atlas-project.png",
-    technologies: ["React", "Next.js", "Tailwind CSS"],
-    category: "Web Development"
+    technologies: ["React", "Next.js",  "TypeScript","Tailwind CSS"],
   },
   {
     id: "partner-sites",
-    name: "Partner Website",
-    description: "Modern responsive websites for business partners",
     image: "/signals.png", 
     technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-    category: "Web Development"
   },
   {
     id: "ui-implementation",
-    name: "UI Implementation",
-    description: "Pixel-perfect Figma designs brought to life",
     image: "/ui-implementation.png",
-    technologies: ["JavaScript", "HTML", "CSS", "Figma", "Git"],
-    category: "UI/UX"
+    technologies: ["HTML", "CSS", "JavaScript", "Figma"],
   },
   {
     id: "movie-picker",
-    name: "Movie-Picker",
-    description: "Interactive questionnaire that leads users to movie recommendations",
     image: "/movie-picker.png",
-    technologies: ["JavaScript", "HTML", "CSS", "Git"],
-    category: "Web Development"
+    technologies: ["HTML", "CSS", "JavaScript"],
   }
 ]
 
 export default function ProjectsSection({ isActive }: { isActive: boolean }) {
-  const [activeProject, setActiveProject] = useState("atlas")
-  const { t, language } = useLanguage()
+  const [activeProject, setActiveProject] = useState("to-done")
+  const { t } = useLanguage()
 
   const activeProjectData = projects.find((p) => p.id === activeProject) || projects[0]
 
@@ -57,75 +42,42 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
     switch (projectId) {
       case "atlas":
         return {
-          description: language === 'ru' 
-            ? "Разработка и поддержка корпоративного веб-сайта ATLAS ANALYTICS. Создание современного, адаптивного сайта с интеграцией различных технологий для обеспечения функциональности и производительности."
-            : language === 'es'
-            ? "Desarrollo y mantenimiento del sitio web corporativo de ATLAS ANALYTICS. Creación de un sitio web moderno y responsivo con integración de diversas tecnologías para garantizar funcionalidad y rendimiento."
-            : "Corporate website development and maintenance for ATLAS ANALYTICS. Creating a modern, responsive website with integration of various technologies to ensure functionality and performance.",
+          description: t("projects.atlas.description"),
           features: []
         }
       case "partner-sites":
         return {
-          description: language === 'ru'
-            ? "Создание современных адаптивных веб-сайтов для партнеров компании. Полная разработка от дизайна до развертывания с использованием современных технологий."
-            : language === 'es'
-            ? "Creación de sitios web modernos y responsivos para socios comerciales. Desarrollo completo desde el diseño hasta el despliegue utilizando tecnologías modernas."
-            : "Modern responsive website development for business partners. Complete development from design to deployment using cutting-edge technologies.",
+          description: t("projects.partner-sites.description"),
           features: []
         }
       case "ui-implementation":
         return {
-          description: language === 'ru'
-            ? "Воплощение дизайнов из Figma с пиксельной точностью. Создание чистых, последовательных и удобных интерфейсов с адаптивным дизайном. Фронтенд часть учебного проекта."
-            : language === 'es'
-            ? "Implementación de diseños de Figma con precisión pixel-perfect. Creación de interfaces limpias, consistentes y amigables con diseño responsivo. Parte frontend de un proyecto educativo."
-            : "Pixel-perfect Figma design implementation. Creating clean, consistent, and user-friendly interfaces with responsive design principles. Frontend part of an educational project.",
+          description: t("projects.ui-implementation.description"),
           features: []
         }
       case "movie-picker":
         return {
-          description: language === 'ru'
-            ? "Интерактивный опросник, который помогает пользователям выбрать фильм на основе их предпочтений. Проект включает простую, интерактивную анкету, которая ведет пользователя к результату на основе их выборов. Стилизация выполнена с использованием CSS, обеспечивая чистый и адаптивный макет. JavaScript используется для обработки взаимодействий пользователя и динамического обновления контента."
-            : language === 'es'
-            ? "Cuestionario interactivo que ayuda a los usuarios a elegir una película basada en sus preferencias. El proyecto incluye un cuestionario simple e interactivo que lleva al usuario a un resultado basado en sus elecciones. El estilo se realiza usando CSS, asegurando un diseño limpio y responsivo. JavaScript se usa para manejar las interacciones del usuario y las actualizaciones dinámicas de contenido."
-            : "Interactive questionnaire that helps users pick a movie based on their preferences. The project includes a simple, interactive questionnaire that leads the user to a result based on their choices. The styling is done using CSS, ensuring a clean and responsive layout. JavaScript is used for handling user interactions and dynamic content updates.",
+          description: t("projects.movie-picker.description"),
           features: []
         }
       case "to-done":
         return {
-          description: language === 'ru'
-            ? "Приложение для управления задачами To-Done помогает пользователям эффективно организовывать свою работу. Проект включает визуализацию задач в виде Канбан-досок с функцией перетаскивания, временные шкалы для планирования и отслеживания дедлайнов, а также интуитивный интерфейс для управления продуктивностью. Разработано с использованием современных технологий React и Next.js для обеспечения высокой производительности и отзывчивости."
-            : language === 'es'
-            ? "La aplicación de gestión de tareas To-Done ayuda a los usuarios a organizar su trabajo de manera eficiente. El proyecto incluye visualización de tareas en tableros Kanban con funcionalidad de arrastrar y soltar, líneas de tiempo para planificación y seguimiento de plazos, así como una interfaz intuitiva para gestionar la productividad. Desarrollado con tecnologías modernas React y Next.js para garantizar alto rendimiento y capacidad de respuesta."
-            : "Task management application To-Done helps users efficiently organize their work. The project includes task visualization in Kanban boards with drag-and-drop functionality, timelines for planning and deadline tracking, as well as an intuitive interface for managing productivity. Built with modern React and Next.js technologies to ensure high performance and responsiveness.",
+          description: t("projects.to-done.description"),
           features: []
         }
       default:
         return {
-          description: "Project description",
+          description: t("projects.descriptionFallback"),
           features: [
-            { number: "0", label: "FEATURES" },
-            { number: "0%", label: "COMPLETE" },
-            { number: "0", label: "TECHNOLOGIES" }
+            { number: "0", label: t("projects.stats.features") },
+            { number: "0%", label: t("projects.stats.complete") },
+            { number: "0", label: t("projects.stats.technologies") }
           ]
         }
     }
   }
 
   const content = getContent(activeProject)
-
-
-  const getTitle = () => {
-    return language === 'ru' ? 'Мои Проекты' : 
-           language === 'es' ? 'Mis Proyectos' : 
-           'My Projects'
-  }
-
-  const getSubtitle = () => {
-    return language === 'ru' ? 'Разработка современных решений с использованием передовых технологий' :
-           language === 'es' ? 'Desarrollo de soluciones modernas utilizando tecnologías avanzadas' :
-           'Building modern solutions using cutting-edge technologies'
-  }
 
   return (
     <section id="projects" className="relative py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 overflow-hidden">
@@ -139,7 +91,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
               delay={0.2}
             >
               <h2 className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-thin-heading leading-[1.1] tracking-tight mb-8">
-                {getTitle()}
+                {t("projects.title")}
               </h2>
             </AnimatedElement>
             <AnimatedElement
@@ -148,7 +100,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
               delay={0.4}
             >
               <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-6xl mx-auto mb-8 font-thin-heading">
-                {getSubtitle()}
+                {t("projects.subtitle")}
               </p>
             </AnimatedElement>
           </div>
@@ -170,7 +122,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                 }`}
                 onClick={() => setActiveProject(project.id)}
               >
-                {project.name}
+                {t(`projects.${project.id}.name`)}
               </button>
             ))}
           </AnimatedElement>
@@ -185,7 +137,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
             {/* Left Column - Text */}
             <div className="text-center lg:text-left">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium-thin mb-4">
-                {activeProjectData.name}
+                {t(`projects.${activeProjectData.id}.name`)}
               </h3>
               
               <p className="text-lg text-muted-foreground leading-relaxed mx-auto lg:mx-0 mb-6 font-thin-heading">
@@ -223,9 +175,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
-                    {language === 'ru' ? 'Посмотреть сайт' : 
-                     language === 'es' ? 'Ver sitio web' : 
-                     'View Website'}
+                    {t("projects.viewWebsite")}
                   </a>
                 ) : activeProject === "partner-sites" ? (
                   <a
@@ -234,9 +184,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
-                    {language === 'ru' ? 'Посмотреть сайт' : 
-                     language === 'es' ? 'Ver sitio web' : 
-                     'View Website'}
+                    {t("projects.viewWebsite")}
                   </a>
                 ) : activeProject === "ui-implementation" ? (
                   <>
@@ -246,9 +194,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Открыть код' : 
-                       language === 'es' ? 'Ver código' : 
-                       'View Code'}
+                      {t("projects.viewCode")}
                     </a>
                     <a
                       href="https://nasoviva.github.io/Christmas-shop/christmas-shop/pages/home/index.html"
@@ -256,9 +202,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Посмотреть сайт' : 
-                       language === 'es' ? 'Ver sitio web' : 
-                       'View Website'}
+                      {t("projects.viewWebsite")}
                     </a>
                   </>
                 ) : activeProject === "movie-picker" ? (
@@ -269,9 +213,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Открыть код' : 
-                       language === 'es' ? 'Ver código' : 
-                       'View Code'}
+                      {t("projects.viewCode")}
                     </a>
                     <a
                       href="https://nasoviva.github.io/movie-picker/movie-picker/pages/"
@@ -279,9 +221,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Посмотреть сайт' : 
-                       language === 'es' ? 'Ver sitio web' : 
-                       'View Website'}
+                      {t("projects.viewWebsite")}
                     </a>
                   </>
                 ) : activeProject === "to-done" ? (
@@ -292,9 +232,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Открыть код' : 
-                       language === 'es' ? 'Ver código' : 
-                       'View Code'}
+                      {t("projects.viewCode")}
                     </a>
                     <a
                       href="https://to-done-nasoviva.vercel.app/"
@@ -302,9 +240,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                       rel="noopener noreferrer"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                     >
-                      {language === 'ru' ? 'Посмотреть сайт' : 
-                       language === 'es' ? 'Ver sitio web' : 
-                       'View Website'}
+                      {t("projects.viewWebsite")}
                     </a>
                   </>
                 ) : (
@@ -312,9 +248,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                     href="#"
                             className="project-button inline-block h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 px-6 min-w-32 text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-200 whitespace-nowrap flex items-center justify-center font-normal"
                   >
-                    {language === 'ru' ? 'Подробнее' : 
-                     language === 'es' ? 'Más Detalles' : 
-                     'Learn More'}
+                    {t("projects.learnMore")}
                   </a>
                 )}
               </div>
@@ -332,7 +266,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                   >
                     <img
                       src="/atlas.png"
-                      alt="ATLAS ANALYTICS Website Preview"
+                      alt={t("projects.atlas.previewAlt")}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
@@ -345,7 +279,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                   >
                     <img
                       src="/signals.png"
-                      alt="Signals.io Preview"
+                      alt={t("projects.partner-sites.previewAlt")}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
@@ -358,7 +292,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                   >
                     <img
                       src="/cristmas_shop.png"
-                      alt="Christmas Shop Preview"
+                      alt={t("projects.ui-implementation.previewAlt")}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
@@ -371,7 +305,7 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                   >
                     <img
                       src="/movie-picker.png"
-                      alt="Movie-Picker Preview"
+                      alt={t("projects.movie-picker.previewAlt")}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
@@ -384,14 +318,14 @@ export default function ProjectsSection({ isActive }: { isActive: boolean }) {
                   >
                     <img
                       src="/toDone.png"
-                      alt="To-Done Task Management Application Preview"
+                      alt={t("projects.to-done.previewAlt")}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     />
                   </a>
                 ) : (
                   <div className="w-full h-64 bg-secondary rounded-lg shadow-2xl flex items-center justify-center">
                     <span className="text-muted-foreground text-lg">
-                      {activeProjectData.name} Preview
+                      {t(`projects.${activeProjectData.id}.name`)} {t("projects.preview")}
                     </span>
                   </div>
                 )}

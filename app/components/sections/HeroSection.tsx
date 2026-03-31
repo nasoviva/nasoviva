@@ -47,7 +47,7 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
         distance={20}
         delay={0.4}
       >
-                <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
+        <Badge className="bg-transparent text-muted-foreground text-xs md:text-sm px-5 py-2 font-normal border border-border rounded-full">
           {t("hero.badge")}
         </Badge>
       </AnimatedElement>
@@ -67,7 +67,7 @@ export default function HeroSection({ isActive }: HeroSectionProps) {
         distance={40}
         delay={0.8}
       >
-        <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mt-6 text-foreground mx-auto text-center font-thin-heading">
+        <p className="text-xl md:text-2xl lg:text-3xl max-w-4xl mt-6 text-foreground mx-auto text-center font-medium-thin">
           {t("hero.subtitle")}
         </p>
       </AnimatedElement>

@@ -18,7 +18,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-                  <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm px-5 py-2 font-normal">
+          <Badge className="bg-transparent text-muted-foreground text-xs md:text-sm px-5 py-2 font-normal border border-border rounded-full">
             {t("hero.location")}
           </Badge>
         </motion.div>
