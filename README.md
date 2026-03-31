@@ -26,6 +26,6 @@
 
 ## 📫 Contact Me
 📧 **Email:** nasoviva@gmail.com  
-🌎 **Portfolio:** https://nasoviva.vercel.app/  
-💬 **Telegram:** https://t.me/hverda
-
+🌎 **Portfolio:** [View Portfolio](https://nasoviva.vercel.app/)  
+💬 **Telegram:** [Send Message](https://t.me/hverda)  
+💼 **LinkedIn:** [Connect with me](https://www.linkedin.com/in/nasoviva/)
