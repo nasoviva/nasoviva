@@ -74,7 +74,7 @@ export default function ExperienceSection({ isActive }: ExperienceSectionProps) 
               <span className="text-left">
                 <span className="font-medium-thin">{item.title}</span>
                 {item.description && (
-                  <div className="mt-2 text-muted-foreground">{renderStructuredDescription(item.description)}</div>
+                  <div className="mt-2 text-foreground">{renderStructuredDescription(item.description)}</div>
                 )}
               </span>
             </li>
