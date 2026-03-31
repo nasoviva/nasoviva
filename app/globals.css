@@ -129,7 +129,7 @@
   /* Theme toggle and interactive elements with proper specificity */
   .landing-page button.theme-toggle {
     background: transparent;
-    color: hsl(var(--muted-foreground));
+    color: hsl(var(--foreground));
     box-shadow: none;
     transition: all 0.2s ease-in-out;
     width: 2.5rem;

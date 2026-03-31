@@ -18,7 +18,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Badge className="bg-transparent text-muted-foreground text-xs md:text-sm px-5 py-2 font-normal border border-border rounded-full">
+          <Badge className="bg-transparent text-foreground text-xs md:text-sm px-5 py-2 font-normal border border-border rounded-full">
             {t("hero.location")}
           </Badge>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Footer() {
             asChild
             variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="https://linkedin.com/in/nasoviva"
@@ -68,7 +68,7 @@ export default function Footer() {
             asChild
             variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="https://github.com/nasoviva"
@@ -85,7 +85,7 @@ export default function Footer() {
             asChild
             variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="https://t.me/hverda"
@@ -102,7 +102,7 @@ export default function Footer() {
             asChild
             variant="secondary"
             size="lg"
-                    className="footer-link w-auto px-6 !bg-secondary !text-secondary-foreground hover:!bg-secondary hover:!text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
+                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
           >
             <a
               href="mailto:nasoviva@gmail.com"

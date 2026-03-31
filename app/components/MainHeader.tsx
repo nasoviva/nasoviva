@@ -63,7 +63,7 @@ export default function MainHeader() {
                   className={`px-2 md:px-3 h-10 rounded-lg text-xs md:text-sm font-normal transition-colors flex items-center justify-center ${
                     language === lang
                       ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-transparent text-muted-foreground hover:text-foreground"
+                      : "bg-transparent text-foreground hover:text-foreground"
                   }`}
                 >
                   {lang.toUpperCase()}
@@ -76,7 +76,7 @@ export default function MainHeader() {
               variant="ghost" 
               size="icon" 
               onClick={toggleTheme} 
-              className="theme-toggle bg-transparent text-muted-foreground hover:text-foreground border border-border rounded-lg"
+              className="theme-toggle bg-transparent text-foreground hover:text-foreground border border-border rounded-lg"
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
