@@ -2,8 +2,8 @@
 
 import type { ReactNode } from "react"
 import { useEffect } from "react"
+import { ThemeProvider } from "next-themes"
 import { Analytics } from "@vercel/analytics/react"
-import { ThemeProvider } from "./contexts/ThemeContext"
 import { LanguageProvider } from "./contexts/LanguageContext"
 
 export function Providers({ children }: { children: ReactNode }) {
@@ -14,7 +14,13 @@ export function Providers({ children }: { children: ReactNode }) {
   }, [])
   
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      themes={["light", "dark"]}
+      enableSystem={false}
+      storageKey="theme"
+    >
       <LanguageProvider>
         {children}
         <Analytics />

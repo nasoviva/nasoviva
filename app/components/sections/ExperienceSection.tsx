@@ -1,12 +1,12 @@
 "use client"
 
 import { useLanguage } from "@/app/contexts/LanguageContext"
-import { Check } from "lucide-react"
 import AnimatedElement from "@/app/components/ui/animated-element"
-
-interface ExperienceSectionProps {
-  isActive: boolean
-}
+import {
+  LANDING_EXPERIENCE_BODY_CLASS,
+  LANDING_EXPERIENCE_JOB_TITLE_CLASS,
+  LANDING_SECTION_TITLE_CLASS,
+} from "@/app/lib/landing-typography"
 
 function renderStructuredDescription(description: string) {
   const blocks = description.split(/\n\n+/).filter((b) => b.trim().length > 0)
@@ -17,23 +17,31 @@ function renderStructuredDescription(description: string) {
       return (
         <ul
           key={blockIndex}
-          className="list-disc pl-5 space-y-1.5 mt-2 text-base md:text-lg leading-relaxed first:mt-0"
+          className={`mt-3 list-none space-y-2.5 pl-0 first:mt-0 ${LANDING_EXPERIENCE_BODY_CLASS}`}
         >
           {lines.map((line, i) => (
-            <li key={i}>{line.replace(/^•\s*/, "")}</li>
+            <li key={i} className="flex gap-2.5">
+              <span className="shrink-0 opacity-70" aria-hidden>
+                •
+              </span>
+              <span>{line.replace(/^•\s*/, "")}</span>
+            </li>
           ))}
         </ul>
       )
     }
     return (
-      <p key={blockIndex} className="leading-relaxed text-base md:text-lg mt-2 first:mt-0">
+      <p
+        key={blockIndex}
+        className={`mt-3 first:mt-0 ${LANDING_EXPERIENCE_BODY_CLASS}`}
+      >
         {lines.join(" ")}
       </p>
     )
   })
 }
 
-export default function ExperienceSection({ isActive }: ExperienceSectionProps) {
+export default function ExperienceSection() {
   const { t } = useLanguage()
   const experienceItems = [t("experience.item1"), t("experience.item2")].filter(
     (item) => item.trim().length > 0
@@ -48,55 +56,37 @@ export default function ExperienceSection({ isActive }: ExperienceSectionProps) 
   })
 
   return (
-    <section id="experience" className="relative w-full flex flex-col justify-center items-center text-center p-8 md:p-16 lg:p-24">
-      <AnimatedElement
-        direction="up"
-        distance={60}
-        delay={0.2}
-      >
-        <h2 className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-thin-heading leading-[1.1] tracking-tight">
-          {t("experience.title")}
-        </h2>
-      </AnimatedElement>
+    <section id="experience" className="relative w-full bg-background text-foreground">
+      <div className="w-full text-foreground">
+        <div className="mt-6 mb-6 px-8 text-center sm:px-10 md:mb-8 md:mt-8 md:px-[60px]">
+          <AnimatedElement direction="up" distance={32} delay={0.05} playImmediately>
+            <h2 className={LANDING_SECTION_TITLE_CLASS}>
+              {t("experience.title")}
+            </h2>
+          </AnimatedElement>
+        </div>
 
-      <AnimatedElement
-        className="text-lg md:text-xl lg:text-2xl max-w-4xl mt-6 text-foreground mx-auto font-thin-heading"
-        direction="up"
-        distance={40}
-        delay={0.4}
-        stagger={true}
-        staggerChildren={0.1}
-      >
-        <ul className="space-y-6">
+        <div className="experience-content w-full space-y-12 border-4 border-black bg-white px-8 pb-16 pt-10 text-left text-black transition-colors duration-200 hover:bg-black hover:text-white md:space-y-16 md:px-[60px] md:pb-24 md:pt-12 lg:space-y-20 lg:pb-28 dark:border-white dark:bg-black dark:text-white dark:hover:border-black dark:hover:bg-white dark:hover:text-black">
           {parsedExperienceItems.map((item, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-primary mt-1 flex-shrink-0" style={{ strokeWidth: 3 }} />
-              <span className="text-left">
-                <span className="font-medium-thin">{item.title}</span>
+            <AnimatedElement
+              key={index}
+              direction="up"
+              distance={28}
+              delay={0.15 + index * 0.08}
+              playImmediately
+            >
+              <article className="w-full">
+                <h3 className={LANDING_EXPERIENCE_JOB_TITLE_CLASS}>
+                  {item.title}
+                </h3>
                 {item.description && (
-                  <div className="mt-2 text-foreground">{renderStructuredDescription(item.description)}</div>
+                  <div>{renderStructuredDescription(item.description)}</div>
                 )}
-              </span>
-            </li>
+              </article>
+            </AnimatedElement>
           ))}
-        </ul>
-      </AnimatedElement>
-
-      <AnimatedElement
-        direction="up"
-        distance={30}
-        delay={0.8}
-        className="mt-12 max-w-4xl mx-auto"
-      >
-        <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
-          {t("experience.footer").split('\n').map((line, index) => (
-            <span key={index}>
-              {index > 0 && <br />}
-              {line}
-            </span>
-          ))}
-        </p>
-      </AnimatedElement>
+        </div>
+      </div>
     </section>
   )
 }

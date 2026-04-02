@@ -1,118 +1,121 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useLanguage } from "@/app/contexts/LanguageContext"
-import { Github, Linkedin, Send, Mail } from "lucide-react"
+import { Github, Linkedin, Send, Mail, type LucideIcon } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
-import { Badge } from "@/app/components/ui/badge"
+import {
+  LANDING_BUTTON_LABEL_CLASS,
+  LANDING_FOOTER_DARK_LINK_BASE_CLASS,
+  LANDING_LEAD_PARAGRAPH_CLASS,
+  LANDING_SECTION_TITLE_CLASS,
+} from "@/app/lib/landing-typography"
+
+const FOOTER_BTN_PRIMARY =
+  "footer-brutal-btn bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+
+const FOOTER_BTN_LINKEDIN =
+  "footer-brutal-btn bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground"
+
+const FOOTER_DARK_LINK_FOCUS =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+
+const FOOTER_CONTACT_LINKS: {
+  href: string
+  label: string
+  Icon: LucideIcon
+  btnClassName: string
+  darkTextClassName: string
+}[] = [
+  {
+    href: "https://linkedin.com/in/nasoviva",
+    label: "LinkedIn",
+    Icon: Linkedin,
+    btnClassName: FOOTER_BTN_LINKEDIN,
+    darkTextClassName: `text-[#5ee9ff] hover:opacity-80 ${FOOTER_DARK_LINK_FOCUS} focus-visible:outline-[#5ee9ff]`,
+  },
+  {
+    href: "https://github.com/nasoviva",
+    label: "GitHub",
+    Icon: Github,
+    btnClassName:
+      "footer-brutal-btn bg-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground",
+    darkTextClassName: `text-[#f5ee38] hover:opacity-80 ${FOOTER_DARK_LINK_FOCUS} focus-visible:outline-[#f5ee38]`,
+  },
+  {
+    href: "https://t.me/hverda",
+    label: "Telegram",
+    Icon: Send,
+    btnClassName: FOOTER_BTN_PRIMARY,
+    darkTextClassName: `text-[#ff4d3a] hover:opacity-80 ${FOOTER_DARK_LINK_FOCUS} focus-visible:outline-[#ff4d3a]`,
+  },
+  {
+    href: "mailto:nasoviva@gmail.com",
+    label: "Email",
+    Icon: Mail,
+    btnClassName:
+      "footer-brutal-btn bg-[#b4ff39] text-[#0a0a0a] hover:bg-[#b4ff39] hover:text-[#0a0a0a]",
+    darkTextClassName: `text-[#b4ff39] hover:opacity-80 ${FOOTER_DARK_LINK_FOCUS} focus-visible:outline-[#b4ff39]`,
+  },
+]
 
 export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer id="footer" className="relative w-full bg-white/50 dark:bg-black/50 backdrop-blur-md border-t border-gray-200 dark:border-transparent">
-      <div className="max-w-1200px mx-auto px-8 py-16 text-center">
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Badge className="bg-transparent text-foreground text-xs md:text-sm px-5 py-2 font-normal border border-border rounded-full">
-            {t("hero.location")}
-          </Badge>
-        </motion.div>
-
-        <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-thin-heading leading-[1.1] tracking-tight mb-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+    <footer
+      id="footer"
+      className="relative z-10 w-full bg-background text-foreground"
+    >
+      <div className="mx-auto w-full max-w-[min(100%,var(--site-content-max))] px-6 py-12 text-center transition-none sm:px-8 sm:py-16 lg:py-16">
+        <h2
+          className={`mx-auto mb-6 max-w-[min(100%,22rem)] opacity-100 transition-none sm:max-w-none ${LANDING_SECTION_TITLE_CLASS}`}
         >
           {t("contact.title")}
-        </motion.h2>
-        
-        <motion.p
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-muted-foreground font-thin-heading"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        </h2>
+
+        <p
+          className={`mx-auto mb-8 max-w-[min(100%,20rem)] opacity-100 transition-none sm:max-w-xl md:max-w-2xl ${LANDING_LEAD_PARAGRAPH_CLASS}`}
         >
           {t("contact.description")}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-4"
+        <div className="flex flex-wrap justify-center gap-4 dark:hidden">
+          {FOOTER_CONTACT_LINKS.map(({ href, label, Icon, btnClassName }) => (
+            <Button
+              key={href}
+              asChild
+              variant="contact"
+              className={`h-auto min-h-0 w-auto rounded-none px-[30px] py-[15px] ${LANDING_BUTTON_LABEL_CLASS} ${btnClassName}`}
+            >
+              <a
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                className="flex items-center gap-3"
+              >
+                <Icon className="h-5 w-5 shrink-0" aria-hidden />
+                {label}
+              </a>
+            </Button>
+          ))}
+        </div>
+
+        <nav
+          className="hidden flex-wrap justify-center gap-x-8 gap-y-4 dark:flex sm:gap-x-10 md:gap-x-12"
+          aria-label={t("contact.title")}
         >
-          <Button
-            asChild
-            variant="secondary"
-            size="lg"
-                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
-          >
+          {FOOTER_CONTACT_LINKS.map(({ href, label, darkTextClassName }) => (
             <a
-              href="https://linkedin.com/in/nasoviva"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
+              key={`dark-${href}`}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+              className={`${LANDING_FOOTER_DARK_LINK_BASE_CLASS} ${darkTextClassName}`}
             >
-              <Linkedin className="h-5 w-5" />
-              LinkedIn
+              {label}
             </a>
-          </Button>
-          
-          <Button
-            asChild
-            variant="secondary"
-            size="lg"
-                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
-          >
-            <a
-              href="https://github.com/nasoviva"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
-            >
-              <Github className="h-5 w-5" />
-              GitHub
-            </a>
-          </Button>
-          
-          <Button
-            asChild
-            variant="secondary"
-            size="lg"
-                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
-          >
-            <a
-              href="https://t.me/hverda"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
-            >
-              <Send className="h-5 w-5" />
-              Telegram
-            </a>
-          </Button>
-          
-          <Button
-            asChild
-            variant="secondary"
-            size="lg"
-                    className="footer-link w-auto px-6 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground hover:scale-105 transition-transform duration-200 text-sm md:text-base font-normal"
-          >
-            <a
-              href="mailto:nasoviva@gmail.com"
-              className="flex items-center gap-3"
-            >
-              <Mail className="h-5 w-5" />
-              Email
-            </a>
-          </Button>
-        </motion.div>
+          ))}
+        </nav>
       </div>
     </footer>
   )

@@ -1,28 +1,67 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/
 
-# dependencies
-/node_modules
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Other package managers (this repo uses pnpm — commit pnpm-lock.yaml, do not ignore it)
 package-lock.json
+yarn.lock
 
-# next.js
-/.next/
-/out/
+# Next.js
+.next/
+out/
 
-# production
-/build
+# Production builds
+build/
+dist/
 
-# debug
+# Debug & logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 .pnpm-debug.log*
+*.log
 
-# env files
-.env*
+# Environment (do not ignore .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Testing & coverage
+coverage/
+.nyc_output/
+
+# Turbopack / Turbo
+.turbo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDE
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/extensions.json
+
+# Certificates & secrets
+*.pem
+*.key
+*.p12
+
+# Misc
+.cache/

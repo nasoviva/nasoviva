@@ -1,69 +1,62 @@
 "use client"
 
-import { useTheme } from "../contexts/ThemeContext"
+import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
 import { useLanguage } from "../contexts/LanguageContext"
-import { Moon, Sun, MessageCircle } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
+import { LANDING_NAV_LINK_CLASS } from "@/app/lib/landing-typography"
 import { Button } from "./ui/button"
 
 export default function MainHeader() {
-  const { theme, toggleTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const toggleTheme = () => {
+    const isDark = document.documentElement.classList.contains("dark")
+    const next = isDark ? "light" : "dark"
+    console.log("[MainHeader] theme toggle", { isDark, next })
+    setTheme(next)
+  }
   const { language, setLanguage, t } = useLanguage()
 
   const navItems = [
-    { key: "about", href: "#about" },
     { key: "projects", href: "#projects" },
-    { key: "skills", href: "#skills" },
-    { key: "experience", href: "#experience" }
+    { key: "experience", href: "#experience" },
+    { key: "contact", href: "#footer" },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-black/50 backdrop-blur-md border-b border-gray-200 dark:border-transparent">
-      <div className="max-w-1200px mx-auto px-8 py-4">
-        <div className="flex items-center relative">
-          {/* Navigation Menu - Centered */}
-          <nav className="hidden xl:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+    <header className="fixed left-0 right-0 top-0 z-50 flex justify-center bg-transparent max-[1439px]:px-[clamp(0.75rem,2.5vw,1.25rem)] sm:max-[1439px]:px-[clamp(1rem,3vw,1.5rem)]">
+      <div className="landing-header-bar w-full max-w-[min(100%,var(--site-content-max))] border-b-4 border-foreground bg-background py-3 pl-4 pr-4 sm:py-4 sm:pl-8 sm:pr-6 md:pl-10 md:pr-8 lg:pl-[60px] lg:pr-[60px]">
+        <div className="flex w-full min-w-0 flex-col items-center justify-center gap-3 min-[424px]:flex-row min-[424px]:flex-nowrap min-[424px]:items-center min-[424px]:justify-between min-[424px]:gap-x-2 min-[424px]:gap-y-0 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center lg:gap-3">
+          <div className="hidden lg:block" aria-hidden="true" />
+          <nav className="flex min-w-0 flex-wrap items-center justify-center gap-x-2 gap-y-1 max-[423px]:w-full max-[423px]:flex-none max-[423px]:justify-center min-[424px]:min-w-0 min-[424px]:flex-1 min-[424px]:flex-nowrap min-[424px]:justify-start sm:gap-x-3 lg:max-w-none lg:flex-nowrap lg:justify-center lg:gap-x-4 xl:gap-x-6">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-sm md:text-base lg:text-lg font-normal text-foreground hover:text-foreground transition-colors"
+                className={LANDING_NAV_LINK_CLASS}
               >
                 {t(`nav.${item.key}`)}
               </a>
             ))}
           </nav>
 
-          {/* Controls - Always on the right */}
-          <div className="ml-auto flex items-center gap-4">
-            {/* Contact Button */}
-            <Button
-              asChild
-              variant="default"
-              className="contact-button h-10 rounded-full bg-primary text-primary-foreground hover:scale-105 transition-transform duration-200 px-6 min-w-32 font-normal"
-            >
-              <a
-                href="#footer"
-                className="flex items-center gap-3 h-full whitespace-nowrap"
-              >
-                <MessageCircle className="h-5 w-5 flex-shrink-0" />
-                <span className="text-sm md:text-base lg:text-lg">
-                  {language === 'en' ? 'Contact' : 
-                   language === 'es' ? 'Contacto' : 
-                   'Контакты'}
-                </span>
-              </a>
-            </Button>
-
-            {/* Language Selector */}
-            <div className="flex gap-1 bg-transparent rounded-lg border border-border h-10 items-center">
+          <div className="flex w-full shrink-0 flex-nowrap items-center justify-center gap-2 max-[423px]:ml-0 max-[423px]:justify-center min-[424px]:ml-auto min-[424px]:w-auto min-[424px]:shrink-0 min-[424px]:justify-end sm:gap-3 lg:ml-0 lg:justify-self-end lg:gap-4">
+            <div className="header-lang-toggle flex h-10 items-center gap-0 rounded-none border-2 border-foreground bg-transparent">
               {(["en", "es", "ru"] as const).map((lang) => (
                 <button
                   key={lang}
+                  type="button"
                   onClick={() => setLanguage(lang)}
-                  className={`px-2 md:px-3 h-10 rounded-lg text-xs md:text-sm font-normal transition-colors flex items-center justify-center ${
+                  className={`header-lang-toggle-btn flex h-full items-center justify-center rounded-none px-1.5 font-semibold tabular-nums tracking-wide transition-colors sm:px-2 md:px-3 ${
                     language === lang
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-transparent text-foreground hover:text-foreground"
+                      ? "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+                      : "bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground"
                   }`}
                 >
                   {lang.toUpperCase()}
@@ -71,14 +64,21 @@ export default function MainHeader() {
               ))}
             </div>
 
-            {/* Theme Toggle */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleTheme} 
-              className="theme-toggle bg-transparent text-foreground hover:text-foreground border border-border rounded-lg"
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="theme-toggle rounded-none border-2 border-foreground bg-transparent text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              aria-label={mounted && resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
             >
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {!mounted ? (
+                <Moon className="h-5 w-5" strokeWidth={2.5} aria-hidden />
+              ) : resolvedTheme === "dark" ? (
+                <Sun className="h-5 w-5" strokeWidth={2.5} aria-hidden />
+              ) : (
+                <Moon className="h-5 w-5" strokeWidth={2.5} aria-hidden />
+              )}
             </Button>
           </div>
         </div>
