@@ -76,7 +76,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="hero-image-col flex flex-col items-stretch justify-center bg-secondary px-6 pb-14 pt-32 sm:px-8 md:min-h-0 md:pb-16 md:pr-8 md:pt-40 lg:pr-12 xl:pr-16">
+        <div className="hero-image-col hidden md:flex flex-col items-stretch justify-center bg-secondary px-6 pb-14 pt-32 sm:px-8 md:min-h-0 md:pb-16 md:pr-8 md:pt-40 lg:pr-12 xl:pr-16">
           <AnimatedElement
             className="flex w-full flex-1 items-center justify-center"
             direction="up"
