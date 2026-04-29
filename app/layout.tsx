@@ -1,32 +1,13 @@
 import type React from "react"
 import "./globals.css"
-import { Archivo_Black, Oswald, Roboto_Mono, Space_Mono } from "next/font/google"
+import { Roboto } from "next/font/google"
 import { LANDING_PRELOAD_IMAGE_PATHS } from "./lib/landing-preload-images"
 import { Providers } from "./providers"
 
-const spaceMono = Space_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
-  variable: "--font-body-mono",
-})
-
-const robotoMono = Roboto_Mono({
+const roboto = Roboto({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
-  weight: ["400", "700"],
-  variable: "--font-mono-cyrillic",
-  display: "swap",
-})
-
-const archivoBlack = Archivo_Black({
-  subsets: ["latin", "latin-ext"],
-  weight: "400",
-  variable: "--font-heading-brutal",
-})
-
-const oswald = Oswald({
-  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-display-cyrillic",
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-poppins",
   display: "swap",
 })
 
@@ -47,7 +28,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceMono.variable} ${robotoMono.variable} ${archivoBlack.variable} ${oswald.variable}`}
+      className={roboto.variable}
     >
       <head>
         {LANDING_PRELOAD_IMAGE_PATHS.map((href, index) => (

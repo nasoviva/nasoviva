@@ -298,7 +298,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     root.classList.toggle("lang-es", language === "es")
     root.classList.toggle("lang-ru", language === "ru")
     root.lang = language === "en" ? "en" : language === "es" ? "es" : "ru"
-    console.log("[Language] document lang/class updated:", language, root.className)
   }, [language])
 
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>

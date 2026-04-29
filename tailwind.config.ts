@@ -1,7 +1,5 @@
 import type { Config } from 'tailwindcss'
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
   darkMode: ['class'],
   content: [
@@ -13,12 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        /** Matches app/layout + globals: Space Mono, then Roboto Mono for Cyrillic */
+        /** Display stack; variable name is legacy (`--font-poppins` in layout). */
         mono: [
-          'var(--font-body-mono)',
-          'var(--font-mono-cyrillic)',
-          'ui-monospace',
-          'monospace',
+          'var(--font-poppins)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
         ],
       },
       colors: {

@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
 
-    --primary: 16 100% 50%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 183 100% 48%;
+    --secondary: 0 0% 92%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 38%;
 
-    --accent: 60 100% 50%;
+    --accent: 0 0% 100%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
@@ -54,32 +54,32 @@
   }
 
   .dark {
-    --background: 0 0% 17%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 20%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 20%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 16 100% 55%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 183 100% 48%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 72%;
+    --muted: 0 0% 0%;
+    --muted-foreground: 0 0% 100%;
 
-    --accent: 60 100% 55%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 100%;
-    --input: 0 0% 20%;
+    --input: 0 0% 0%;
     --ring: 16 100% 55%;
     
     --brutal: 0 0% 100%;
@@ -118,7 +118,7 @@
     background-color: hsl(var(--background));
     overflow-x: hidden;
     
-    font-family: var(--font-body-mono), var(--font-mono-cyrillic), ui-monospace, monospace;
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   }
   
   
@@ -153,9 +153,7 @@
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
-    border-bottom: none;
-    border-left: 4px solid #000000;
-    border-right: 4px solid #000000;
+    border: none;
     box-sizing: border-box;
   }
 
@@ -206,7 +204,10 @@
     color: inherit;
   }
 
-  .landing-page section.hero-section .hero-text-col h1,
+  .landing-page section.hero-section .hero-text-col h1 {
+    color: #F4C430;
+  }
+
   .landing-page section.hero-section .hero-text-col p {
     color: hsl(var(--accent-foreground));
   }
@@ -215,17 +216,17 @@
     color: hsl(var(--accent-foreground) / 0.75);
   }
 
-  
-  .landing-page .hero-brutal-btn {
-    transform-origin: center center;
-    border-width: 4px;
-    border-color: hsl(var(--foreground));
-    box-shadow: 6px 6px 0 0 hsl(var(--secondary));
+  .dark .landing-page section.hero-section .hero-text-col .hero-description {
+    color: #ffffff;
   }
 
-  .landing-page .hero-brutal-btn:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0 0 hsl(var(--primary));
+  
+  .landing-page .hero-brutal-btn {
+    border: none;
+    box-shadow: none;
+    transition: opacity 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   
@@ -243,29 +244,29 @@
 
   .dark .landing-page .hero-brutal-btn {
     border-color: #000000;
-    box-shadow: 6px 6px 0 0 hsl(var(--secondary));
-  }
-
-  .dark .landing-page .hero-brutal-btn:hover {
-    box-shadow: 8px 8px 0 0 hsl(var(--primary));
+    box-shadow: none;
   }
 
   .dark .landing-page .hero-photo-frame {
     border-color: #000000;
-    box-shadow: 8px 8px 0 0 #000000;
-  }
-
-  .dark .landing-page section.hero-section .hero-text-col {
-    border-color: #000000;
-  }
-
-  .dark .landing-page section.hero-section .about-services-grid,
-  .dark .landing-page section.hero-section .about-service-box {
-    border-color: #000000;
+    box-shadow: none;
   }
 
   .dark .landing-page .landing-header-bar {
-    border-bottom-color: #000000;
+    border-bottom-color: #F4C430;
+  }
+
+  .dark .landing-page,
+  .dark .landing-page h1,
+  .dark .landing-page h2,
+  .dark .landing-page h3,
+  .dark .landing-page h4,
+  .dark .landing-page h5,
+  .dark .landing-page h6,
+  .dark .landing-page p,
+  .dark .landing-page li,
+  .dark .landing-page label {
+    color: #ffffff;
   }
 
   
@@ -283,8 +284,6 @@
   .landing-page .about-services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    
-    border-bottom: 4px solid hsl(var(--foreground));
   }
 
   @media (min-width: 768px) {
@@ -301,41 +300,9 @@
 
   .landing-page .about-service-box {
     padding: 40px;
-    border-bottom: 4px solid hsl(var(--foreground));
     text-align: center;
   }
 
-  .landing-page .about-service-box:last-child {
-    border-bottom: none;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    .landing-page .about-service-box {
-      border-bottom: none;
-      border-right: 4px solid hsl(var(--foreground));
-    }
-
-    .landing-page .about-service-box:nth-child(2n) {
-      border-right: none;
-    }
-
-    .landing-page .about-service-box:nth-child(-n + 2) {
-      border-bottom: 4px solid hsl(var(--foreground));
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .landing-page .about-service-box {
-      border-bottom: none;
-      border-right: 4px solid hsl(var(--foreground));
-    }
-
-    .landing-page .about-service-box:nth-child(4n) {
-      border-right: none;
-    }
-  }
-
-  
   .landing-page .about-service-box h3 {
     color: inherit;
   }
@@ -348,6 +315,10 @@
   .landing-page h1, .landing-page h2, .landing-page h3, 
   .landing-page h4, .landing-page h5, .landing-page h6 {
     color: hsl(var(--foreground));
+  }
+
+  .landing-page h2.font-thin-heading {
+    color: #F4C430;
   }
   
   .landing-page .bg-secondary h3,
@@ -368,19 +339,26 @@
     background: transparent;
     color: hsl(var(--foreground));
     box-shadow: none;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+      opacity 0.2s ease;
     width: 2.5rem;
     height: 2.5rem;
     min-width: 2.5rem;
-    border-width: 2px;
-    border-style: solid;
-    border-color: hsl(var(--foreground));
+    border: none;
   }
 
   .landing-page button.theme-toggle:hover {
-    background: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
+    background: #f4c430;
+    color: #000000;
     box-shadow: none;
+    opacity: 0.8;
+  }
+
+  html:not(.dark) .landing-page button.theme-toggle:hover,
+  html:not(.dark) .landing-page button.theme-toggle:focus-visible {
+    background: transparent;
+    color: hsl(var(--foreground));
+    opacity: 0.8;
   }
   
   .landing-page .tech-logo,
@@ -451,7 +429,7 @@
 
   
   .landing-page .header-lang-toggle .header-lang-toggle-btn {
-    font-family: var(--font-body-mono), ui-monospace, monospace;
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 600;
@@ -517,20 +495,23 @@
   }
 
   .landing-page .skills-marquee-strip {
-    background-color: #000000;
-    color: #ffffff;
-    border-top-color: #000000;
-    border-bottom-color: #000000;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border: none;
   }
 
   .dark .landing-page .skills-marquee-strip {
     background-color: #000000;
-    border-top-color: #000000;
-    border-bottom-color: #000000;
+    color: #f4c430;
+    border: none;
   }
 
   .landing-page .skills-marquee-strip span {
-    color: #ffffff;
+    color: hsl(var(--foreground));
+  }
+
+  .dark .landing-page .skills-marquee-strip span {
+    color: #f4c430;
   }
   
   
@@ -560,18 +541,15 @@
     }
   }
 
-  .dark .landing-page .border-foreground {
-    border-color: #000000;
-  }
-
-  .dark .landing-page button.theme-toggle {
-    border-color: #000000;
+  .landing-page .border-foreground,
+  .landing-page .border-black {
+    border-color: #F4C430;
   }
 
   .dark .landing-page .contact-button,
   .dark .landing-page .download-button,
   .dark .landing-page .project-button {
-    border-color: #000000;
+    border-color: #F4C430;
   }
 }
 
@@ -588,12 +566,11 @@ html:not(.dark) body {
 }
 
 .font-thin-heading {
-  font-weight: 200;
   letter-spacing: -0.02em;
-  font-family: var(--font-heading-brutal), var(--font-display-cyrillic), sans-serif;
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
-.landing-page .font-thin-heading {
+.landing-page .font-thin-heading:not(.font-semibold) {
   font-weight: 400;
   letter-spacing: -0.03em;
 }
@@ -603,41 +580,4 @@ html:not(.dark) body {
   letter-spacing: -0.01em;
 }
 
-html.lang-ru body {
-  font-family: var(--font-mono-cyrillic), ui-monospace, monospace;
-}
-
-html.lang-ru .font-mono {
-  font-family: var(--font-mono-cyrillic), ui-monospace, monospace;
-}
-
-html.lang-ru .font-thin-heading,
-html.lang-ru .landing-page .font-thin-heading {
-  font-family: var(--font-display-cyrillic), sans-serif;
-}
-
-html.lang-ru .landing-page main h1.font-thin-heading,
-html.lang-ru .landing-page main h2.font-thin-heading,
-html.lang-ru .landing-page main h3.font-thin-heading {
-  font-weight: 700;
-}
-
-html.lang-ru .landing-page main .hero-brutal-btn.font-thin-heading,
-html.lang-ru .landing-page footer#footer .footer-brutal-btn.font-thin-heading,
-html.lang-ru .landing-page footer#footer .footer-dark-text-link {
-  font-weight: 500;
-}
-
-html.lang-ru .landing-page header nav a.font-thin-heading {
-  font-weight: 700;
-}
-
-html.lang-ru .landing-page .about-service-box h3 {
-  font-family: var(--font-display-cyrillic), sans-serif;
-  font-weight: 600;
-}
-
-html.lang-ru .landing-page .about-service-box p {
-  font-family: var(--font-mono-cyrillic), ui-monospace, monospace;
-}
 

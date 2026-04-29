@@ -22,22 +22,19 @@ export default function SkillsMarqueeStrip() {
     { id: "react-testing-library", name: "React Testing Library" },
   ] as const
 
-  const itemClass = LANDING_MARQUEE_ITEM_CLASS
-  const sepClass = LANDING_MARQUEE_SEP_CLASS
-
   const MarqueeSegment = ({ copy }: { copy: "a" | "b" }) => (
-    <span className="inline-flex w-max flex-nowrap items-center whitespace-nowrap text-white">
+    <span className="inline-flex w-max flex-nowrap items-center whitespace-nowrap">
       {techLogos.map((item, i) => (
         <Fragment key={`${item.id}-${copy}`}>
           {i > 0 && (
-            <span className={sepClass} aria-hidden>
+            <span className={LANDING_MARQUEE_SEP_CLASS} aria-hidden>
               //
             </span>
           )}
-          <span className={itemClass}>{item.name.toUpperCase()}</span>
+          <span className={LANDING_MARQUEE_ITEM_CLASS}>{item.name.toUpperCase()}</span>
         </Fragment>
       ))}
-      <span className={sepClass} aria-hidden>
+      <span className={LANDING_MARQUEE_SEP_CLASS} aria-hidden>
         //
       </span>
     </span>
@@ -45,7 +42,7 @@ export default function SkillsMarqueeStrip() {
 
   return (
     <div className="mx-auto w-full max-w-[min(100%,var(--site-content-max))]">
-      <div className="skills-marquee-strip marquee overflow-hidden border-y-4 border-black bg-black px-6 py-3 text-white sm:px-8 md:px-10 md:py-4">
+      <div className="skills-marquee-strip marquee overflow-hidden bg-background px-6 py-3 sm:px-8 md:px-10 md:py-4 dark:bg-black">
         <div className="marquee-content flex w-max animate-marquee-loop">
           <MarqueeSegment copy="a" />
           <MarqueeSegment copy="b" />

@@ -66,7 +66,7 @@ export default function ExperienceSection() {
           </AnimatedElement>
         </div>
 
-        <div className="experience-content w-full space-y-12 border-4 border-black bg-black px-8 pb-16 pt-10 text-left text-white transition-colors duration-200 hover:bg-white hover:text-black md:space-y-16 md:px-[60px] md:pb-24 md:pt-12 lg:space-y-20 lg:pb-28">
+        <div className="experience-content w-full space-y-12 bg-background px-8 pb-16 pt-10 text-left text-foreground dark:bg-black dark:text-white md:space-y-16 md:px-[60px] md:pb-24 md:pt-12 lg:space-y-20 lg:pb-28">
           {parsedExperienceItems.map((item, index) => (
             <AnimatedElement
               key={index}
